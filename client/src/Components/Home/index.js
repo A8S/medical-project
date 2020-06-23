@@ -31,7 +31,7 @@ class Home extends Component {
 	};
 	render() {
 		return (
-			<div style={isAuthenticated() ? { minHeight: '90vh' } : { minHeight: '340vh' }}>
+			<div style={isAuthenticated() ? { minHeight: '110vh' } : { minHeight: '380vh' }}>
 				<div
 					style={{
 						backgroundImage: `url(${home})`,
