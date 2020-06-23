@@ -88,9 +88,9 @@ class NewPost extends Component {
 	clickSubmit = event => {
 		event.preventDefault();
 		this.setState({ loading: true });
-		console.log(this.state.tags);
+		// console.log(this.state.tags);
 
-		this.postData.set('tags', [...this.state.tags, ...this.state.selectedValues]);
+		this.postData.set('tags', this.state.tags.concat(this.state.selectedValues));
 
 		if (this.isValid()) {
 			const userId = isAuthenticated().user._id;
