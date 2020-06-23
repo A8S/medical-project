@@ -1,5 +1,5 @@
 const express = require('express');
-const { getPathys, createPathy } = require('../controllers/pathys');
+const { getPathys, createPathy,updatePathy,deletePathy } = require('../controllers/pathys');
 
 const router = express.Router();
 
@@ -11,6 +11,16 @@ router.get('/pathys', (req, res) => {
 //create route
 router.post('/pathy', function(req, res) {
 	createPathy(req, res);
+});
+
+//update route
+router.put('/pathy', (req, res) => {
+	updatePathy(req, res);
+});
+
+//delete route
+router.delete('/pathy/delete', (req, res) => {
+	deletePathy(req, res);
 });
 
 module.exports = router;

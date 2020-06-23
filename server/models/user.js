@@ -41,7 +41,8 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     default: "subscriber"
-  }
+  },
+  bookmarks: [{ type: ObjectId, ref: 'Subdisease' }],
 });
 
 // When a single user is retrived from the backend, we want the user object to include the names and IDs

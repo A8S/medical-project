@@ -86,6 +86,7 @@ exports.getPosts = async (req, res) => {
 
 // to test this method we need to enter x-www-form-urlencoded option in postman
 exports.createPost = (req, res, next) => {
+  console.log("divyanshu");
   // this function work only when form data is there
   let form = new formidable.IncomingForm(); // give incoming form fields
   form.keepExtensions = true; // keep the extensions like jpeg, png, pdf etc
@@ -95,6 +96,13 @@ exports.createPost = (req, res, next) => {
         error: 'Image could not be uploaded',
       });
     }
+    console.log('hinthis',fields.tags);
+    console.log('sds',fields.tags);
+    console.log(fields.tags.split(','));
+    
+    fields.tags=fields.tags.split(',');
+    
+    console.log("fsdfdsfd",fields);
     let post = new Post(fields); // so post will be there with all the fields coming
 
     req.profile.hashed_password = undefined;

@@ -20,3 +20,29 @@ exports.createPathy = (req, res) => {
 		}
 	});
 };
+
+exports.updatePathy = (req, res) => {
+	pathys.findByIdAndUpdate(req.body,(err, updatedPathy) => {
+		if (err) {
+			console.log(err);
+		} else {
+			res.send(updatedPathy);
+		}
+	});
+};
+
+
+exports.deletePathy = (req, res) => {
+   
+    pathys.remove((err, pathys) => {
+      if (err) {
+        return res.status(400).json({
+          error: err,
+        });
+      }
+      res.json({
+        message: 'Pathy deleted successfully',
+      });
+    });
+  };
+  

@@ -429,3 +429,36 @@ exports.findPeople = (req, res) => {
         res.json(users);
     }).select("name");
 };
+
+exports.addBookmark = (req, res) => {
+    User.findByIdAndUpdate(
+      req.body.userId,
+      { $push: { bookmarks: req.body.sdId } },
+      { new: true }
+    ).exec((err, result) => {
+      if (err) {
+        return res.status(400).json({
+          error: err,
+        });
+      } else {
+        res.json(result);
+      }
+    });
+  };
+  
+  
+  exports.removeBookmark = (req, res) => {
+    User.findByIdAndUpdate(
+      req.body.userId,
+      { $pull: { bookmarks: req.body.sdId } },
+      { new: true }
+    ).exec((err, result) => {
+      if (err) {
+        return res.status(400).json({
+          error: err,
+        });
+      } else {
+        res.json(result);
+      }
+    });
+  };

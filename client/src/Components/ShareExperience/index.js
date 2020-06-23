@@ -1,6 +1,3 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable prefer-destructuring */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { isAuthenticated } from '../../Api';

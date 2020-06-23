@@ -11,7 +11,9 @@ const {
   removeFollowing,
   removeFollower,
   findPeople,
-  hasAuthorization
+  hasAuthorization,
+  addBookmark,
+  removeBookmark
 } = require("../controllers/user");
 const { requireSignin } = require("../controllers/auth");
 
@@ -19,6 +21,9 @@ const router = express.Router();
 
 router.put("/user/follow", requireSignin, addFollowing, addFollower);
 router.put("/user/unfollow", requireSignin, removeFollowing, removeFollower);
+//add or remove bookmark
+router.put("/user/bookmark",addBookmark);
+router.put("/user/unbookmark",removeBookmark);
 
 router.get("/users", allUsers); // access to all and no authentication for this
 router.get("/user/:userId", requireSignin, getUser); // need middleware requireSignin
