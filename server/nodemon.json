@@ -1,0 +1,1 @@
+{ "watch": ["controllers/","models/", "routes/"], "ext": "ts, js", "ignore": ["public"], "exec": "node index.js" }

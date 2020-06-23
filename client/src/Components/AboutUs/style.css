@@ -1,0 +1,42 @@
+
+
+.aboutTitle{
+  margin-top: 100px !important;
+  margin-bottom: 60px !important;
+}
+
+.wrap {
+	display: flex;
+	background: white;
+	padding: 1rem 1rem 1rem 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 7px 7px 30px -5px rgba(0, 0, 0, 0.1);
+	margin-bottom: 2rem;
+}
+
+.vcenter {
+	margin: auto;
+}
+
+.testimonials {
+	padding-bottom: 100px;
+}
+
+.testimonials h3 {
+	margin-bottom: 20px;
+}
+
+.testimonials .card {
+	border-bottom: 3px#f8f9fa solid !important;
+	transition: 0.5s;
+	margin-top: 60px;
+}
+
+.testimonials .card i {
+	background-color: #f8f9fa;
+	color: #545b6291;
+	width: 75px;
+	height: 75px;
+	line-height: 75px;
+	margin: -40px auto 0 auto;
+}

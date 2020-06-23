@@ -1,0 +1,19 @@
+.postButton {
+	width: 280px;
+	height: 47px;
+	margin-bottom: 2%;
+}
+
+.btn .button {
+	color: 2a9d8f !important;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.left-right {
+	padding-left: 48%;
+}

@@ -1,0 +1,60 @@
+.buttonJoin {
+	display: block;
+
+	font-size: 24px;
+	padding: 12px;
+	margin: auto;
+	border-radius: 16px;
+
+	text-decoration: none !important;
+}
+
+.main-title {
+	font-weight: 600 !important;
+	font-size: 3.5em;
+	margin-top: 10vh;
+}
+
+.lead {
+	font-size: 30px;
+	font-weight: 400;
+}
+.buttonJoin:hover {
+	display: block;
+	font-size: 24px;
+	padding: 12px;
+	text-decoration: none !important;
+}
+.jbtron {
+	/* margin-top: 8vh !important; */
+	height: 90vh;
+	margin: 0;
+}
+.sta {
+	padding-left: 4%;
+	padding-right: 4%;
+	padding-top: 4%;
+}
+
+.subscribe-div {
+	margin: 70px auto;
+}
+
+.centre-logo {
+	width: 16vw;
+	margin: 5vw !important;
+}
+
+.form-inline {
+	margin-top: 100px;
+	margin-bottom: 120px;
+	border-top: 3px solid rgba(0, 0, 0, 0.25);
+	padding-top: 100px !important;
+}
+
+.news-letter-subheading {
+	font-weight: 300;
+	text-align: center;
+	font-size: 18px;
+	padding-top: 20px;
+}

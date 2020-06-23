@@ -1,0 +1,13 @@
+
+.profile 
+{
+    min-height: 100px;
+	display: inline-block;
+    }
+
+    .card 
+{
+    word-wrap: initial;
+    padding: 0.5em;
+    }
+
