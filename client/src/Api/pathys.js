@@ -1,4 +1,4 @@
-import { serverUrl } from '../variables';
+/* import { serverUrl } from '../variables';
 import axios from 'axios';
 
 export const createSubdisease = async (subdisease, dId) => {
@@ -56,3 +56,4 @@ export const updateSubdisease = (sdId, subdisease) => {
 			return error;
 		});
 };
+*/
