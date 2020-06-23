@@ -50,15 +50,15 @@ app.get('/api', (req, res) => {
 app.get('/hello', (req, res) => {
   res.json('Welcome to Medical Councelling');
 });
-app.get('/*', (req, res) => {
-  res.sendfile(path.join((__dirname = 'client/build/index.html')));
-});
 
 // middleware
 app.use(morgan('dev')); // Middleware: using morgan to log requests to the console
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
+  app.get('/*', (req, res) => {
+    res.sendfile(path.join((__dirname = 'client/build/index.html')));
+  });
   app.use(express.static('client/build'));
   app.use(express.static(path.join(__dirname, 'client/build')));
 }
