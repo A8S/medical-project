@@ -5,6 +5,7 @@ import { isAuthenticated } from '../../Api';
 import { read, update, updateUser } from '../../Api/User';
 import DefaultProfile from '../../Images/avatar.png';
 import loader from '../../Images/loader2.gif';
+import { serverUrl } from '../../variables';
 
 class EditProfile extends React.Component {
 	constructor() {
@@ -321,7 +322,7 @@ class EditProfile extends React.Component {
 			return <Redirect to={`/user/${id}`} />;
 		}
 		const photoUrl = id
-			? `${process.env.REACT_APP_API_URL}/api/user/photo/${id}?${new Date().getTime()}`
+			? `${serverUrl}/api/user/photo/${id}?${new Date().getTime()}`
 			: DefaultProfile;
 		return (
 			<div>
