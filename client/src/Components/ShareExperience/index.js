@@ -27,6 +27,7 @@ class NewPost extends Component {
 			tags: [],
 		};
 		this.multiselectRef = React.createRef();
+		this.uploadSingleFile = this.uploadSingleFile.bind(this);
 	}
 
 	componentDidMount() {
@@ -81,6 +82,11 @@ class NewPost extends Component {
 			event.preventDefault();
 		}
 	};
+	uploadSingleFile(e) {
+		this.setState({
+			photo: URL.createObjectURL(e.target.files[0]),
+		});
+	}
 
 	clickSubmit = event => {
 		event.preventDefault();
@@ -118,12 +124,14 @@ class NewPost extends Component {
 		plainArray,
 		selectedValues,
 		customTag,
+		imgPreview,
 	) => (
 		<form>
+			<div className="form-group preview">{imgPreview}</div>
 			<div className="form-group">
 				<label className="text-muted">Profile Photo</label>
 				<input
-					onChange={this.handleChange('photo')}
+					onChange={this.uploadSingleFile}
 					type="file"
 					accept="image/*"
 					className="form-control"
@@ -207,8 +215,13 @@ class NewPost extends Component {
 			customTag,
 		} = this.state;
 
+		let imgPreview;
 		if (redirectToPosts) {
 			return <Redirect to="/posts" />;
+		}
+
+		if (this.state.photo) {
+			imgPreview = <img src={this.state.photo} alt="" />;
 		}
 
 		return (
@@ -234,6 +247,7 @@ class NewPost extends Component {
 					plainArray,
 					selectedValues,
 					customTag,
+					imgPreview,
 				)}
 			</div>
 		);
