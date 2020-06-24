@@ -46,9 +46,8 @@ class SinglePost extends Component {
 		const callApi = this.state.like ? unlike : like;
 		const userId = isAuthenticated().user._id;
 		const postId = this.state.post._id;
-		const token = isAuthenticated().token;
 
-		callApi(userId, token, postId).then(data => {
+		callApi(userId, postId).then(data => {
 			if (data.error) {
 				console.log(data.error);
 			} else {
@@ -220,13 +219,13 @@ class SinglePost extends Component {
 						/>
 					</div>
 				</div>
-				{/* {like ? (
+				{like ? (
 					<h3 onClick={this.likeToggle}>
 						<i
 							className="fa fa-thumbs-up text-success bg-dark"
 							style={{ padding: '10px', borderRadius: '50%' }}
 						/>{' '}
-						{likes} Like
+						{this.state.likes} Like
 					</h3>
 				) : (
 					<h3 onClick={this.likeToggle}>
@@ -234,9 +233,9 @@ class SinglePost extends Component {
 							className="fa fa-thumbs-up text-warning bg-dark"
 							style={{ padding: '10px', borderRadius: '50%' }}
 						/>{' '}
-						{likes} Like
+						{this.state.likes} Like
 					</h3>
-				)} */}
+				)}
 				{/* <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
                     Comments
                 </Disqus.CommentCount>

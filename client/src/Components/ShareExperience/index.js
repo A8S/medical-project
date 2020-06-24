@@ -6,6 +6,7 @@ import loader from '../../Images/loader2.gif';
 import { serverUrl } from '../variables';
 
 import { Multiselect } from 'multiselect-react-dropdown';
+import imageToBase64 from 'image-to-base64';
 
 class NewPost extends Component {
 	constructor() {
@@ -25,6 +26,7 @@ class NewPost extends Component {
 			redirectToPosts: false,
 			customTag: '',
 			tags: [],
+			base64: '',
 		};
 		this.multiselectRef = React.createRef();
 		this.uploadSingleFile = this.uploadSingleFile.bind(this);
@@ -83,8 +85,11 @@ class NewPost extends Component {
 		}
 	};
 	uploadSingleFile(e) {
+		let file = e.target.files[0];
+		// thisdata:image/jpeg;base64,${data}`
+
 		this.setState({
-			photo: URL.createObjectURL(e.target.files[0]),
+			photo: `data:image/jpeg;base64,${e.target.files[0]}`,
 		});
 	}
 

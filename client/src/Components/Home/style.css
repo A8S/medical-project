@@ -18,6 +18,8 @@
 .lead {
 	font-size: 30px;
 	font-weight: 400;
+	padding: 20px !important;
+	margin: 0 !important;
 }
 .buttonJoin:hover {
 	display: block;

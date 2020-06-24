@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom';
 import './style.css';
 import CardLayout from '../WhatWeDo';
 import logo from '../../Images/logo.svg';
+import Background from '../../Images/Home/bg.svg';
+import MainSvg from '../../Images/Home/main.svg';
+
 import Testimonial from '../ContactUs/Testimonial';
 import Testimonialdata from '../../Data/Testimonial_data';
 import { subscribe } from '../../Api/Subscribe';
 import { isAuthenticated } from '../../Api/';
+import { Container, Row, Col } from 'react-bootstrap';
 import home from '../../Images/Home3.jpg';
 
 class Home extends Component {
@@ -34,7 +38,7 @@ class Home extends Component {
 			<div style={isAuthenticated() ? { minHeight: '110vh' } : { minHeight: '380vh' }}>
 				<div
 					style={{
-						backgroundImage: `url(${home})`,
+						backgroundImage: `url(${Background})`,
 
 						// flex: '1',
 						// alignSelf: 'stretch',
@@ -47,36 +51,56 @@ class Home extends Component {
 				>
 					<div className="container-fluid" style={{ minHeight: '100vh' }}>
 						<div className="text-white text-center jbtron">
-							<h2 className="main-title">Medical Counselling</h2>
-							<p className="lead">Experiance of common man help each other</p>
-							<img src={logo} className="img-responsive centre-logo" alt="logo" />
-							<div className="row">
-								<div className="col-md-6 ">
-									<Link to="/Signup">
-										<button
-											type="button"
-											className="btn btn-default buttonJoin float-right"
-										>
-											Share Experience
-										</button>
-									</Link>
-								</div>
-								<div className="col-md-6">
-									<Link to="/Signup">
-										<button
-											type="button"
-											className="btn  buttonJoin float-left"
+							<Container fluid>
+								<Row>
+									<Col md={6}>
+										<img
+											src={MainSvg}
+											className="img-responsive centre-logo"
+											alt="logo"
 											style={{
-												backgroundColor: '#343a40',
-												color: 'rgb(150,150,150)',
-												fontWeight: '800',
+												height: '70vh',
+												width: '40vw',
+												paddingTop: '30vh',
 											}}
-										>
-											Ask Suggestion
-										</button>
-									</Link>
-								</div>
-							</div>
+										/>
+									</Col>
+
+									<Col md={6}>
+										<div style={{ paddingTop: '15vh' }}>
+											<h2 className="main-title">Medical Counselling</h2>
+											<p className="lead">
+												Experience of common man help each other
+											</p>
+
+											<div className="row align-items-center my-auto">
+												<Link to="/Signup">
+													<button
+														type="button"
+														className="btn btn-default buttonJoin float-right"
+													>
+														Share Experience
+													</button>
+												</Link>
+
+												<Link to="/Signup">
+													<button
+														type="button"
+														className="btn  buttonJoin float-left"
+														style={{
+															backgroundColor: '#343a40',
+															color: 'rgb(200,200,200)',
+															fontWeight: '800',
+														}}
+													>
+														Ask Suggestion
+													</button>
+												</Link>
+											</div>
+										</div>
+									</Col>
+								</Row>
+							</Container>
 						</div>
 					</div>
 
