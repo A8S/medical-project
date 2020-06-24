@@ -6,7 +6,7 @@
 	"author": "Paarmita Bhargava",
 	"license": "MIT",
 	"proxy": "http://localhost:5000",
-	"homepage": "https://fierce-bastion-68105.herokuapp.com/",
+	"homepage": "../app",
 	"dependencies": {
 		"axios": "^0.19.2",
 		"bootstrap": "^4.5.0",
