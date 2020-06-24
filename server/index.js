@@ -55,12 +55,6 @@ app.get('/hello', (req, res) => {
 app.use(morgan('dev')); // Middleware: using morgan to log requests to the console
 app.use(express.json());
 
-if (process.env.NODE_ENV === 'production') {
-  app.get('/*', (req, res) => {
-    res.sendfile(path.join((__dirname = 'client/build/index.html')));
-  });
-  app.use(express.static(path.join(__dirname, 'client/build')));
-}
 app.use(cookieParser()); // cookieParser(secret, options)
 app.use(expressValidator());
 app.use(cors());
