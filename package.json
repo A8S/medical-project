@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node server",
+    "build": "cd client/ && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon",
     "dev": "concurrently \"npm run server\" \"npm run client\""
