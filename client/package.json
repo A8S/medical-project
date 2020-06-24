@@ -5,7 +5,7 @@
 	"description": "Social Network for patients",
 	"author": "Paarmita Bhargava",
 	"license": "MIT",
-	"proxy": "http://localhost:5000",
+	"proxy": "https://gifted-gates-e3aa20.netlify.app/",
 	"homepage": "../app",
 	"dependencies": {
 		"axios": "^0.19.2",
