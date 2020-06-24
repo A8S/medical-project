@@ -23,7 +23,7 @@ const { createPostValidator } = require('../validator');
 const router = express.Router();
 
 var corsOptions = {
-  origin: 'http://example.com',
+  origin: 'https://gifted-gates-e3aa20.netlify.app',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
