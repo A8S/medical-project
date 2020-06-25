@@ -6,7 +6,7 @@ import loader from '../../Images/loader2.gif';
 import { serverUrl } from '../variables';
 
 import { Multiselect } from 'multiselect-react-dropdown';
-import imageToBase64 from 'image-to-base64';
+// import imageToBase64 from 'image-to-base64';
 
 class NewPost extends Component {
 	constructor() {
