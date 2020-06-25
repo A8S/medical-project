@@ -3,11 +3,24 @@
 
 	font-size: 24px;
 	padding: 12px;
-	margin: auto;
+	margin: 20px;
 	border-radius: 16px;
 
 	text-decoration: none !important;
+
 }
+.buttonJoin1 {
+	display: block;
+	font-weight: 800;
+	font-size: 14px;
+	padding: 12px;
+	margin: auto;
+	border-radius: 16px;
+	color: rgb(200,200,200);
+	background-color: #343a40;
+	text-decoration: none !important;
+}
+
 
 .main-title {
 	font-weight: 600 !important;
@@ -24,6 +37,12 @@
 .buttonJoin:hover {
 	display: block;
 	font-size: 24px;
+	padding: 12px;
+	text-decoration: none !important;
+}
+.buttonJoin1:hover {
+	display: block;
+	font-size: 15px;
 	padding: 12px;
 	text-decoration: none !important;
 }
@@ -53,11 +72,13 @@
 	border-top: 3px solid rgba(0, 0, 0, 0.25);
 	padding-top: 100px !important;
 }
-
+.newletter{
+	font-size: 24px;
+}
 .news-letter-subheading {
-	font-weight: 300;
+	
 	text-align: center;
-	font-size: 18px;
+	font-size: 14px;
 	padding-top: 20px;
 }
 

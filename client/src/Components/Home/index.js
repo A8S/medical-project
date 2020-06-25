@@ -35,7 +35,7 @@ class Home extends Component {
 	};
 	render() {
 		return (
-			<div style={isAuthenticated() ? { minHeight: '110vh' } : { minHeight: '380vh' }}>
+			<div style={isAuthenticated() ? { minHeight: '110em' } : { minHeight: '140em' }}>
 				<div
 					style={{
 						backgroundImage: `url(${Background})`,
@@ -45,11 +45,11 @@ class Home extends Component {
 						position: 'absolute',
 						backgroundSize: 'cover',
 						width: '100%',
-						height: '100vh',
+						height: '40em',
 						top: '0',
 					}}
 				>
-					<div className="container-fluid" style={{ minHeight: '100vh' }}>
+					<div className="container-fluid" style={{ minHeight: '50px' }}>
 						<div className="text-white text-center jbtron">
 							<Container fluid>
 								<Row>
@@ -67,14 +67,14 @@ class Home extends Component {
 									</Col>
 
 									<Col md={6}>
-										<div style={{ paddingTop: '15vh' }}>
+										<div style={{ paddingTop: '1em' }}>
 											<h2 className="main-title">Medical Counselling</h2>
 											<p className="lead">
 												Experience of common man help each other
 											</p>
 
 											<div
-												className="row align-items-center my-auto"
+												className="row align-items-center "
 												style={{ width: '30px' }}
 											>
 												<Link to="/Signup">
@@ -160,7 +160,7 @@ class Home extends Component {
 							</div>
 							<div className="container">
 								<Link to="/Signup">
-									<button type="button" className="btn btn-primary buttonJoin">
+									<button type="button" className="btn btn-primary buttonJoin1">
 										Become a Member
 									</button>
 								</Link>
@@ -171,7 +171,9 @@ class Home extends Component {
 								onSubmit={this.onSubscribe}
 							>
 								<div>
-									<h2>Subscribe to our Newsletter for latest posts</h2>
+									<h2 className="newletter">
+										Subscribe to our Newsletter for latest posts
+									</h2>
 									<h4 className="news-letter-subheading">
 										You will recieve email notifications for all our new posts.
 									</h4>
@@ -189,9 +191,9 @@ class Home extends Component {
 										id="inlineFormInputName2"
 										placeholder="Email"
 										style={{
-											width: '25vw',
-											border: '3px solid rgba(0,0,0,0.25)',
-											fontSize: '20px',
+											width: '20em',
+											border: '2px solid rgba(0,0,0,0.25)',
+											fontSize: '16px',
 										}}
 									/>
 									{/* <p></p> */}
@@ -201,8 +203,8 @@ class Home extends Component {
 										style={{
 											marginLeft: '20px',
 											border: '3px solid #007bff',
-											width: '10vw',
-											fontSize: '20px',
+											width: '6rem',
+											fontSize: '14px',
 										}}
 									>
 										Subscribe
