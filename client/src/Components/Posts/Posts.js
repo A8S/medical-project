@@ -8,6 +8,7 @@ import { list } from '../../Api/Post';
 import { Table, Pagination } from 'react-bootstrap';
 
 import './style.css';
+import { isAuthenticated } from '../../Api';
 
 class Posts extends React.Component {
 	constructor() {
@@ -15,9 +16,10 @@ class Posts extends React.Component {
 		this.state = {
 			posts: [],
 			page: 1,
+			redirectToSignin: false,
 			noMorePosts: false,
+			bookmark: false,
 		};
-		let items = [];
 	}
 
 	loadPosts = page => {

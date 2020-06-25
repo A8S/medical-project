@@ -7,7 +7,7 @@ export const createSubdisease = async (subdisease, dId) => {
 	return axios({
 		method: 'post',
 		url: `${serverUrl}/api/subdisease/${dId}`,
-		data: subdisease
+		data: subdisease,
 	})
 		.then(function(response) {
 			return response;
@@ -31,25 +31,55 @@ export const createSubdisease = async (subdisease, dId) => {
 };
 
 // Read
-export const getSubdisease = (sdId) => {
+export const getSubdisease = sdId => {
 	return fetch(`${serverUrl}/api/subdisease/${sdId}`, {
-		method: 'GET'
+		method: 'GET',
 	})
-		.then((response) => {
+		.then(response => {
 			return response.json();
 		})
-		.catch((err) => console.log(err));
+		.catch(err => console.log(err));
 };
 
 // Delete
-export const deleteSubdisease = (sdId) => {
+export const deleteSubdisease = sdId => {
 	return fetch(`${serverUrl}/api/subdisease/delete/${sdId}`, {
-		method: 'DELETE'
+		method: 'DELETE',
 	})
-		.then((response) => {
+		.then(response => {
 			return response.json();
 		})
-		.catch((err) => console.log(err));
+		.catch(err => console.log(err));
+};
+
+export const book = (userId, postId) => {
+	return fetch(`${serverUrl}/api/subdisease/book`, {
+		method: 'PUT',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({ userId, postId }),
+	})
+		.then(response => {
+			return response.json();
+		})
+		.catch(err => console.log(err));
+};
+
+export const unbook = (userId, postId) => {
+	return fetch(`${serverUrl}/api/subdisease/unbook`, {
+		method: 'PUT',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({ userId, postId }),
+	})
+		.then(response => {
+			return response.json();
+		})
+		.catch(err => console.log(err));
 };
 
 // Update
@@ -59,7 +89,7 @@ export const updateSubdisease = (sdId, subdisease) => {
 	return axios({
 		method: 'put',
 		url: `${serverUrl}/api/subdisease/${sdId}`,
-		data: subdisease
+		data: subdisease,
 	})
 		.then(function(response) {
 			return response;
