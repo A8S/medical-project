@@ -73,7 +73,10 @@ class Home extends Component {
 												Experience of common man help each other
 											</p>
 
-											<div className="row align-items-center my-auto">
+											<div
+												className="row align-items-center my-auto"
+												style={{ width: '30px' }}
+											>
 												<Link to="/Signup">
 													<button
 														type="button"

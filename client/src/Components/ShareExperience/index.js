@@ -26,10 +26,9 @@ class NewPost extends Component {
 			redirectToPosts: false,
 			customTag: '',
 			tags: [],
-			base64: '',
+			selectedPhoto: '',
 		};
 		this.multiselectRef = React.createRef();
-		this.uploadSingleFile = this.uploadSingleFile.bind(this);
 	}
 
 	componentDidMount() {
@@ -84,14 +83,6 @@ class NewPost extends Component {
 			event.preventDefault();
 		}
 	};
-	uploadSingleFile(e) {
-		let file = e.target.files[0];
-		// thisdata:image/jpeg;base64,${data}`
-
-		this.setState({
-			photo: `data:image/jpeg;base64,${e.target.files[0]}`,
-		});
-	}
 
 	clickSubmit = event => {
 		event.preventDefault();
@@ -136,7 +127,7 @@ class NewPost extends Component {
 			<div className="form-group">
 				<label className="text-muted">Profile Photo</label>
 				<input
-					onChange={this.uploadSingleFile}
+					onChange={this.handleChange('photo')}
 					type="file"
 					accept="image/*"
 					className="form-control"
