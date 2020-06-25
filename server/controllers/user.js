@@ -240,6 +240,17 @@ exports.userById = (req, res, next, id) => {
         });
 };
 
+exports.userCount =(req,res)=>{
+    User.find({},(err,result)=>{
+    if (err){
+        return res.send(err);
+    }
+    else{
+        console.log("fjnskdfn",result.length)
+        return res.json({count:result.length});
+    }}
+    )
+}
 exports.hasAuthorization = (req, res, next) => {
     let sameUser = req.profile && req.auth && req.profile._id == req.auth._id;
     let adminUser = req.profile && req.auth && req.auth.role === "admin";

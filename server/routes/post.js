@@ -13,6 +13,7 @@ const {
   like,
   unlike,
   tags,
+  postCount,
 } = require('../controllers/post');
 const { requireSignin } = require('../controllers/auth');
 const { userById } = require('../controllers/user');
@@ -35,6 +36,7 @@ router.put('/post/unlike', unlike);
 //tags
 router.post('/post/tags', tags);
 
+router.get('/post/count',postCount);
 router.post(
   // use requireSignin as middleware
   '/post/new/:userId', // in order to post something we need userId
