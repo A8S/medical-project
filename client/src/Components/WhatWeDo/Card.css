@@ -3,13 +3,14 @@
 }
 
 ._card {
-	height: 135px;
+	height: 15px;
+
 }
 
 .card-img-top {
-	width: 60% !important;
-	height: 150px !important;
-	margin: 20px 70px 20px 70px !important;
+	width: 310px;
+	height: 40px !important;
+	margin: 35px 35px 35px 35px !important;
 }
 
 .des {
@@ -18,10 +19,10 @@
 /*color: #24a06a*/
 
 .lead {
-	font-size: 24px;
+	font-size: 16px;
 	padding: 2em;
 }
 
 .divider {
-	border-right: 3px solid rgba(0, 0, 0, 0.25);
+	border-right: 1px solid rgba(0, 0, 0, 0.25);
 }

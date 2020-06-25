@@ -61,18 +61,18 @@ class CarouselSlide extends Component {
 						? 'carousel__slide carousel__slide--active'
 						: 'carousel__slide'
 				}
-				style={{ height: '30vh' }}
+				style={{ height:'auto' }}
 			>
-				<p className="carousel-slide__content" style={{ fontSize: '20px' }}>
+				<p className="carousel-slide__content" style={{ fontSize: '16px' }}>
 					{this.props.slide.content}
 				</p>
 				<p>
-					<strong className="carousel-slide__author" style={{ fontSize: '20px' }}>
+					<strong className="carousel-slide__author" style={{ fontSize: '16px' }}>
 						{this.props.slide.author}
 					</strong>
 				</p>
 				<p>
-					<small className="carousel-slide__source" style={{ fontSize: '20px' }}>
+					<small className="carousel-slide__source" style={{ fontSize: '16px' }}>
 						{this.props.slide.source}
 					</small>
 				</p>
@@ -142,13 +142,14 @@ class Testimonial extends Component {
 			<div className="carousel">
 				<CarouselLeftArrow onClick={e => this.goToPrevSlide(e)} />
 
-				<ul className="carousel__slides">
+				<ul className="carousel__slides" >
 					{this.props.slides.map((slide, index) => (
 						<CarouselSlide
 							key={index}
 							index={index}
 							activeIndex={this.state.activeIndex}
 							slide={slide}
+						
 						/>
 					))}
 				</ul>

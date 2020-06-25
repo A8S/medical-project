@@ -8,7 +8,7 @@ class AboutUs extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<h2 className="my-5">About Us</h2>
+				<h2 className="my-5 aboutTitle">About Us</h2>
 				<div className="row">
 					<div className="col-6">
 						<div className="wrap">
@@ -138,7 +138,7 @@ class AboutUs extends React.Component {
 						<div className="card shadow p-3 mb-5 bg-white rounded">
 							<div className="card-body">
 								<h5 className="card-title text-center font-weight-bold">700</h5>
-								<p className="card-text text-center">No. of Members</p>
+								<p className="card-text text-center"> Members</p>
 							</div>
 						</div>
 					</div>
