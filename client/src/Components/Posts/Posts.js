@@ -106,7 +106,7 @@ class Posts extends React.Component {
 									</td>
 									{/* <p className="card-text">{post.body.substring(0, 100)}</p> */}
 									<td className="card-text" style={{ wordBreak: 'break-word' }}>
-										{post.tags ? post.tags[0] : 'No tags'}
+										{post.tags[0]}
 									</td>
 									{/* only some charaters are visible in the posts */}
 

@@ -78,12 +78,52 @@ exports.getPosts = async (req, res) => {
         .select('_id title body likes created tags');
     })
     .then((posts) => {
-      console.log('cc', posts);
+      console.log('ccddddd', posts.length);
       res.status(200).json(posts);
     })
     .catch((err) => console.log(err));
 };
 
+exports.countPosts = async (req, res) => {
+  // get current page from req.query or use default value of 1
+  const currentPage = req.query.page || 1;
+  // return 3 posts per page
+  const perPage = 7;
+  let totalItems;
+
+  const posts = await Post.find()
+    // countDocuments() gives you total count of posts
+    // .countDocuments()
+    .then((count) => {
+      totalItems = count;
+      return Post.find()
+        .skip((currentPage - 1) * perPage)
+        .populate('comments', 'text created')
+        .populate('comments.postedBy', '_id name')
+        .populate('postedBy', '_id name')
+        .sort({ date: -1 })
+        .limit(perPage)
+        .select('_id title body likes created tags');
+    })
+    .then((posts) => {
+      console.log('ccddddd', posts.length);
+      res.status(200).json(posts);
+    })
+    .catch((err) => console.log(err));
+};
+
+exports.postCount = (req, res) => {
+  console.log('this is ');
+  Post.find({}, (err, result) => {
+    console.log('fjnskdfn', result);
+    if (err) {
+      return res.send(err);
+    }
+
+    console.log('fjnskdfn', result.length);
+    return res.json({ count: result.length });
+  });
+};
 // to test this method we need to enter x-www-form-urlencoded option in postman
 exports.createPost = (req, res, next) => {
   // console.log('divyanshu');
@@ -273,7 +313,6 @@ exports.unlike = (req, res) => {
 exports.tags = async (req, res) => {
   console.log('this is ', req.body.tags);
   const posts = await Post.find()
-
     .then((count) => {
       return Post.find({ tags: { $all: req.body.tags } })
         .populate('comments', 'text created')

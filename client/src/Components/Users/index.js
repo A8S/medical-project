@@ -46,7 +46,7 @@ class Users extends Component {
 								}`}
 								onError={i => (i.target.src = `${DefaultProfile}`)}
 								alt={user.name}
-								style={{ height: '50px', width: 'auto' }}
+								style={{ height: '80px', width: 'auto' }}
 								className="rounded-circle img-fluid"
 							/>
 						</div>
@@ -81,7 +81,7 @@ class Users extends Component {
 							<Link
 								to={`/user/${user._id}`}
 								className="btn btn-info btn-block btn-sm"
-								style={{ margin: 'auto', padding: '5px' }}
+								style={{ margin: 'auto', padding: '10px' }}
 							>
 								<span className="fa fa-user" /> View Profile{' '}
 							</Link>

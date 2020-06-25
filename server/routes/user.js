@@ -13,7 +13,8 @@ const {
   findPeople,
   hasAuthorization,
   addBookmark,
-  removeBookmark
+  removeBookmark,
+  userCount
 } = require("../controllers/user");
 const { requireSignin } = require("../controllers/auth");
 
@@ -24,7 +25,7 @@ router.put("/user/unfollow", requireSignin, removeFollowing, removeFollower);
 //add or remove bookmark
 router.put("/user/bookmark",addBookmark);
 router.put("/user/unbookmark",removeBookmark);
-
+router.get("/user/count",userCount);
 router.get("/users", allUsers); // access to all and no authentication for this
 router.get("/user/:userId", requireSignin, getUser); // need middleware requireSignin
 router.put("/user/:userId", requireSignin, hasAuthorization, updateUser); // PATCH is for making small update and PUT for whole obj update

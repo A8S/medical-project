@@ -232,6 +232,11 @@ class Navigation extends React.Component {
 										<Link className="dropdown-item" to="/share_experience">
 											Share Experience
 										</Link>
+									
+										<Link className="dropdown-item" to="/users">
+											Users
+										</Link>
+
 										<Link
 											className="dropdown-item"
 											to={`/myposts/${isAuthenticated().user._id}`}
