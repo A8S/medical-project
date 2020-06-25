@@ -5,6 +5,7 @@ import Disqus from 'disqus-react';
 import { singlePost, remove, like, unlike } from '../../Api/Post';
 import DefaultPost from '../../Images/mountains.jpg';
 import { isAuthenticated } from '../../Api';
+import { serverUrl } from '../variables';
 
 class SinglePost extends Component {
 	state = {
@@ -205,9 +206,7 @@ class SinglePost extends Component {
 					</div>
 					<div className="col-md-9">
 						<img
-							src={`https://medical-umbrella.herokuapp.com/api/post/photo/${
-								post._id
-							}`}
+							src={`${serverUrl}/api/post/photo/${post._id}`}
 							alt={post.title}
 							onError={i => (i.target.src = `${DefaultPost}`)}
 							className="img-thunbnail mb-3"

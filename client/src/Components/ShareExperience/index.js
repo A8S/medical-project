@@ -26,7 +26,8 @@ class NewPost extends Component {
 			redirectToPosts: false,
 			customTag: '',
 			tags: [],
-			selectedPhoto: '',
+			imgPreviewUrl: '',
+			imgLoading: false,
 		};
 		this.multiselectRef = React.createRef();
 	}
@@ -60,7 +61,23 @@ class NewPost extends Component {
 		this.postData.set(name, value);
 		console.log(this.postData);
 		this.setState({ [name]: value, fileSize });
+	};
+	handlePhotoChange = name => event => {
 		event.preventDefault();
+		this.setState({
+			imgLoading: true,
+		});
+		let reader = new FileReader();
+		const value = event.target.files[0];
+		this.postData.set('photo', value, event.target.files[0].size);
+
+		reader.onloadend = () => {
+			this.setState({
+				imgPreviewUrl: reader.result,
+				imgLoading: false,
+			});
+		};
+		reader.readAsDataURL(value);
 	};
 
 	getSelectedValues = () => {
@@ -115,6 +132,9 @@ class NewPost extends Component {
 	newPostForm = (
 		title,
 		body,
+		error,
+		loading,
+		redirectToPosts,
 		treatmentTaken,
 		description,
 		plainArray,
@@ -123,11 +143,19 @@ class NewPost extends Component {
 		imgPreview,
 	) => (
 		<form>
-			<div className="form-group preview">{imgPreview}</div>
+			<div className="form-group preview">
+				{this.state.imgLoading ? (
+					<div>
+						<img src={loader} alt="Loading..." />
+					</div>
+				) : (
+					imgPreview
+				)}
+			</div>
 			<div className="form-group">
 				<label className="text-muted">Profile Photo</label>
 				<input
-					onChange={this.handleChange('photo')}
+					onChange={this.handlePhotoChange('photo')}
 					type="file"
 					accept="image/*"
 					className="form-control"
@@ -210,14 +238,14 @@ class NewPost extends Component {
 			selectedValues,
 			customTag,
 		} = this.state;
-
-		let imgPreview;
+		let imgPreview = null;
+		if (this.state.imgPreviewUrl) {
+			imgPreview = <img src={this.state.imgPreviewUrl} style={{ width: '400px' }} />;
+		} else {
+			imgPreview = <h3>Select an Image</h3>;
+		}
 		if (redirectToPosts) {
 			return <Redirect to="/posts" />;
-		}
-
-		if (this.state.photo) {
-			imgPreview = <img src={this.state.photo} alt="" />;
 		}
 
 		return (
@@ -238,6 +266,9 @@ class NewPost extends Component {
 				{this.newPostForm(
 					title,
 					body,
+					error,
+					loading,
+					redirectToPosts,
 					treatmentTaken,
 					description,
 					plainArray,
