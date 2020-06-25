@@ -16,28 +16,32 @@
 	width: 100px;
 	height: 100px;
 	align-self: middle;
-	margin:50px 20px;
+	margin: 50px 20px;
 	margin-top: 24px;
 }
 
-._color{
+._color {
 	color: white;
 }
 
-._pd-left{
+/* ._pd-left {
 	padding-left: 22px !important;
 }
-.footer-copyright{
+.footer-copyright {
 	margin-top: -114px;
 	margin-left: 85px;
-} 
-.abc{
+} */
+.abc {
 	margin-top: -23px;
 	padding-right: 79px;
 }
-.icon{
+.icon {
 	margin-left: -61px;
-    margin-right: 0px;
-    padding-right: 0;
-    margin-top: -34px;
+	margin-right: 0px;
+	padding-right: 0;
+	margin-top: -34px;
+}
+
+.footer {
+	height: 300px;
 }

@@ -55,20 +55,6 @@ class Posts extends React.Component {
 	};
 
 	renderPosts = posts => {
-		let items = [];
-
-		for (let number = 1; number <= posts.length; number++) {
-			items.push(
-				<Pagination.Item
-					key={number}
-					active={number === this.state.page}
-					onClick={e => this.fun(number)}
-				>
-					{number}
-				</Pagination.Item>,
-			);
-		}
-
 		return (
 			<div className="row">
 				<Table striped bordered hover>
@@ -120,7 +106,7 @@ class Posts extends React.Component {
 									</td>
 									{/* <p className="card-text">{post.body.substring(0, 100)}</p> */}
 									<td className="card-text" style={{ wordBreak: 'break-word' }}>
-										Cancer
+										{post.tags ? post.tags[0] : 'No tags'}
 									</td>
 									{/* only some charaters are visible in the posts */}
 
@@ -128,7 +114,7 @@ class Posts extends React.Component {
 									Posted by <Link to={`${posterId}`}>{posterName} </Link>
 									on {new Date(post.created).toDateString()}
 								</p> */}
-									<td className="col-xs-8">{14}</td>
+									<td className="col-xs-8">{post.likes.length}</td>
 									<td className="card-text" style={{ wordBreak: 'break-word' }}>
 										{post.body}
 									</td>
@@ -141,22 +127,35 @@ class Posts extends React.Component {
 						})}
 					</tbody>
 				</Table>
-				<div className="center">
-					<Pagination>{items}</Pagination>
-				</div>
 			</div>
 		);
 	};
 
 	render() {
 		const { posts, page } = this.state;
+		let items = [];
+
+		for (let number = 1; number <= 14; number++) {
+			items.push(
+				<Pagination.Item
+					key={number}
+					active={number === this.state.page}
+					onClick={e => this.fun(number)}
+				>
+					{number}
+				</Pagination.Item>,
+			);
+		}
 		return (
 			<div>
 				{' '}
 				{this.renderPosts(posts)}
-				<div className="left-right">
-					<Pagination>
+				<div>
+					<Pagination style={{ margin: 'auto' }}>
 						{page > 1 ? <Pagination.Prev onClick={() => this.loadLess(1)} /> : ''}
+
+						{items}
+
 						{posts.length ? <Pagination.Next onClick={() => this.loadMore(1)} /> : ''}
 					</Pagination>
 				</div>

@@ -75,7 +75,7 @@ exports.getPosts = async (req, res) => {
         .populate('postedBy', '_id name')
         .sort({ date: -1 })
         .limit(perPage)
-        .select('_id title body likes created');
+        .select('_id title body likes created tags');
     })
     .then((posts) => {
       console.log('cc', posts);
@@ -273,8 +273,7 @@ exports.unlike = (req, res) => {
 exports.tags = async (req, res) => {
   console.log('this is ', req.body.tags);
   const posts = await Post.find()
-    // countDocuments() gives you total count of posts
-    .countDocuments()
+
     .then((count) => {
       return Post.find({ tags: { $all: req.body.tags } })
         .populate('comments', 'text created')

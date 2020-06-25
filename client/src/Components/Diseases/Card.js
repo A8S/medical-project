@@ -61,9 +61,31 @@ export default class Card extends Component {
 	render() {
 		let button;
 		if (this.state.bookmark) {
-			button = <h3 onClick={this.bookmarkToggle}>book</h3>;
+			button = (
+				<div onClick={this.bookmarkToggle}>
+					<i
+						class="fa fa-bookmark"
+						aria-hidden="true"
+						style={{
+							fontSize: '30px',
+							color: '#444a60',
+						}}
+					/>
+				</div>
+			);
 		} else {
-			button = <h3 onClick={this.bookmarkToggle}>unbook</h3>;
+			button = (
+				<div onClick={this.bookmarkToggle}>
+					<i
+						class="fa fa-bookmark-o"
+						aria-hidden="true"
+						style={{
+							fontSize: '30px',
+							color: '#646a80',
+						}}
+					/>
+				</div>
+			);
 		}
 		return (
 			<div className="card card-disease makeitflex m-0 mr-0">
@@ -77,14 +99,11 @@ export default class Card extends Component {
 						<h5>
 							<h3>{this.props.data.title}</h3>
 						</h5>
-						<div>
-							<img width="30px" src={Cancer} />
-						</div>
+						<div>{button}</div>
 					</div>
 
 					<p className="card-text">{this.props.data.description}</p>
 				</div>
-				{button}
 
 				<Link
 					className="readMoreButton"

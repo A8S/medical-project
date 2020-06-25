@@ -3,11 +3,33 @@
 
 	font-size: 24px;
 	padding: 12px;
-	margin: 20px;
-	border-radius: 16px;
+	/* margin: 20px; */
+	border-radius: 50px;
+	width: 600px;
+	margin-top: 100px;
+	position: absolute;
+	left: 8%;
 
 	text-decoration: none !important;
-
+}
+.buttonJoinLight {
+	margin: auto;
+}
+.buttonJoinDark {
+	background-color: #343a40;
+	color: rgb(200, 200, 200);
+	font-weight: 800;
+	margin: auto;
+	margin-top: 80px;
+}
+.mainbtn {
+	text-align: center;
+	align-items: center;
+	align-content: center;
+	margin-top: 200px;
+}
+.mainBtn {
+	display: inline;
 }
 .buttonJoin1 {
 	display: block;
@@ -16,23 +38,23 @@
 	padding: 12px;
 	margin: auto;
 	border-radius: 16px;
-	color: rgb(200,200,200);
+	color: rgb(200, 200, 200);
 	background-color: #343a40;
 	text-decoration: none !important;
 }
-
 
 .main-title {
 	font-weight: 600 !important;
 	font-size: 3.5em;
 	margin-top: 2em;
+	padding-right: 25%;
 }
 
 .lead {
-	font-size: 30px;
+	font-size: 20px !important;
 	font-weight: 400;
-	padding: 20px !important;
-	margin: 0 !important;
+	/* margin: 0 !important; */
+	margin-right: 25%;
 }
 .buttonJoin:hover {
 	display: block;
@@ -48,7 +70,7 @@
 }
 .jbtron {
 	/* margin-top: 8vh !important; */
-	height: 90vh;
+	height: 100vh;
 	margin: 0;
 }
 .sta {
@@ -62,8 +84,9 @@
 }
 
 .centre-logo {
-	width: 16vw;
-	margin: 5vw !important;
+	height: 70vh;
+	width: 40vw;
+	padding-top: 30vh;
 }
 
 .form-inline {
@@ -72,17 +95,33 @@
 	border-top: 3px solid rgba(0, 0, 0, 0.25);
 	padding-top: 100px !important;
 }
-.newletter{
+.newletter {
 	font-size: 24px;
 }
 .news-letter-subheading {
-	
 	text-align: center;
 	font-size: 14px;
 	padding-top: 20px;
 }
 
+@media only screen and (max-width: 1500px) {
+	.buttonJoin {
+		width: 500px;
+
+		text-decoration: none !important;
+	}
+	.mainbtn {
+		margin-top: 100px;
+	}
+}
+
 @media only screen and (max-width: 1200px) {
+	.buttonJoin {
+		width: 400px;
+	}
+	.mainbtn {
+		margin-top: 60px;
+	}
 }
 
 @media only screen and (max-width: 900px) {
@@ -91,8 +130,30 @@
 		font-size: 3.5em;
 		margin-top: 2em;
 	}
+	.buttonJoin {
+		width: 300px;
+	}
 }
 @media only screen and (max-width: 768px) {
+	.centre-logo {
+		padding-top: 0 !important;
+		position: absolute;
+		left: 35%;
+		margin-top: 40%;
+	}
+	.main-title {
+		padding-left: 20%;
+	}
+	.lead {
+		margin: 0;
+		margin-top: 5%;
+		margin-left: 20%;
+		width: 300px;
+		position: absolute;
+	}
+	.mainbtn {
+		margin-top: 70%;
+	}
 }
 @media only screen and (max-width: 500px) {
 }
