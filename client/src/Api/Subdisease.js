@@ -53,13 +53,13 @@ export const deleteSubdisease = sdId => {
 };
 
 export const book = (userId, postId) => {
-	return fetch(`${serverUrl}/api/subdisease/book`, {
+	return fetch(`${serverUrl}/api/subdisease/book/${postId}`, {
 		method: 'PUT',
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify({ userId, postId }),
+		body: JSON.stringify({ userId }),
 	})
 		.then(response => {
 			return response.json();
@@ -68,13 +68,13 @@ export const book = (userId, postId) => {
 };
 
 export const unbook = (userId, postId) => {
-	return fetch(`${serverUrl}/api/subdisease/unbook`, {
+	return fetch(`${serverUrl}/api/subdisease/unbook/${postId}`, {
 		method: 'PUT',
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify({ userId, postId }),
+		body: JSON.stringify({ userId }),
 	})
 		.then(response => {
 			return response.json();
