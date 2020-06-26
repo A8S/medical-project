@@ -7,7 +7,7 @@
 // import React, { useEffect, useState } from 'react';
 import React, { Component } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Cancer from '../../Images/Diseases/1.png';
 import { deleteDisease } from '../../Api/Disease';
 import { Button } from 'react-bootstrap';
@@ -40,7 +40,7 @@ export default class Card extends Component {
 	};
 	bookmarkToggle = () => {
 		if (!isAuthenticated()) {
-			this.state({ redirectToSignin: true });
+			this.setState({ redirectToSignin: true });
 			return false;
 		}
 		const callApi = this.state.bookmark ? unbook : book;
@@ -59,6 +59,10 @@ export default class Card extends Component {
 		});
 	};
 	render() {
+		const { redirectToSignin } = this.state;
+		if (redirectToSignin) {
+			return <Redirect to="/signin" />;
+		}
 		let button;
 		if (this.state.bookmark) {
 			button = (
