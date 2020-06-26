@@ -1,6 +1,10 @@
-.feed{
-    height: 300px;
+.feed {
+	height: 300px;
 }
-.head{
-    margin-top: 112px;
+.head {
+	margin-top: 112px;
+}
+.scroll-y {
+	height: 400px;
+	overflow-y: auto;
 }
