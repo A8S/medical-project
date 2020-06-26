@@ -56,6 +56,13 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.card-text{
+	overflow: hidden;
+    width: 90%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
 .no-suggestions {
 	color: #999;
