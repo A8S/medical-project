@@ -122,7 +122,8 @@ exports.postCount =(req,res)=>{
   }
   
       console.log("fjnskdfn",result.length)
-      return res.json({count:result.length});
+      let Obj={count:result.length};
+     res.status(200).json(Obj);
   }
   )
 }

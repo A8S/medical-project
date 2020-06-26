@@ -145,7 +145,8 @@ class AboutUs extends React.Component {
 					<div className="col-md-3">
 						<div className="card shadow p-3 mb-5 bg-white rounded">
 							<div className="card-body">
-								<h5 className="card-title text-center font-weight-bold">4020</h5>
+								<h5 className="card-title text-center font-weight-bold"><span >
+									</span> </h5>
 								<p className="card-text text-center">No. of Visitors</p>
 							</div>
 						</div>
