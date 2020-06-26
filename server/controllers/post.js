@@ -112,18 +112,21 @@ exports.countPosts = async (req, res) => {
     .catch((err) => console.log(err));
 };
 
-exports.postCount = (req, res) => {
-  console.log('this is ');
-  Post.find({}, (err, result) => {
-    console.log('fjnskdfn', result);
-    if (err) {
+exports.postCount =(req,res)=>{
+  console.log("this is ");
+  Post.find({},(err,result)=>{
+    console.log("fjnskdfn",result);
+  if (err){
+    
       return res.send(err);
-    }
-
-    console.log('fjnskdfn', result.length);
-    return res.json({ count: result.length });
-  });
-};
+  }
+  
+      console.log("fjnskdfn",result.length)
+      let Obj={count:result.length};
+     res.status(200).json(Obj);
+  }
+  )
+}
 // to test this method we need to enter x-www-form-urlencoded option in postman
 exports.createPost = (req, res, next) => {
   // console.log('divyanshu');
