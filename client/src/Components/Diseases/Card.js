@@ -7,7 +7,7 @@
 // import React, { useEffect, useState } from 'react';
 import React, { Component } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Cancer from '../../Images/Diseases/1.png';
 import { deleteDisease } from '../../Api/Disease';
 import { Button } from 'react-bootstrap';
@@ -40,7 +40,7 @@ export default class Card extends Component {
 	};
 	bookmarkToggle = () => {
 		if (!isAuthenticated()) {
-			this.state({ redirectToSignin: true });
+			this.setState({ redirectToSignin: true });
 			return false;
 		}
 		const callApi = this.state.bookmark ? unbook : book;
@@ -59,11 +59,37 @@ export default class Card extends Component {
 		});
 	};
 	render() {
+		const { redirectToSignin } = this.state;
+		if (redirectToSignin) {
+			return <Redirect to="/signin" />;
+		}
 		let button;
 		if (this.state.bookmark) {
-			button = <h3 onClick={this.bookmarkToggle}>book</h3>;
+			button = (
+				<div onClick={this.bookmarkToggle}>
+					<i
+						class="fa fa-bookmark"
+						aria-hidden="true"
+						style={{
+							fontSize: '30px',
+							color: '#444a60',
+						}}
+					/>
+				</div>
+			);
 		} else {
-			button = <h3 onClick={this.bookmarkToggle}>unbook</h3>;
+			button = (
+				<div onClick={this.bookmarkToggle}>
+					<i
+						class="fa fa-bookmark-o"
+						aria-hidden="true"
+						style={{
+							fontSize: '30px',
+							color: '#646a80',
+						}}
+					/>
+				</div>
+			);
 		}
 		return (
 			<div className="card card-disease makeitflex m-0 mr-0">
@@ -77,14 +103,11 @@ export default class Card extends Component {
 						<h5>
 							<h3>{this.props.data.title}</h3>
 						</h5>
-						<div>
-							<img width="30px" src={Cancer} />
-						</div>
+						<div>{button}</div>
 					</div>
 
 					<p className="card-text">{this.props.data.description}</p>
 				</div>
-				{button}
 
 				<Link
 					className="readMoreButton"

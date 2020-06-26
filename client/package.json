@@ -6,6 +6,7 @@
 	"author": "Paarmita Bhargava",
 	"license": "MIT",
 	"dependencies": {
+		"@material-ui/core": "^4.10.2",
 		"axios": "^0.19.2",
 		"bootstrap": "^4.5.0",
 		"disqus-react": "^1.0.6",
@@ -25,6 +26,7 @@
 		"npm": "^6.14.5",
 		"prettier": "^1.16.4",
 		"prop-types": "^15.7.2",
+		"rc-footer": "^0.6.3",
 		"react": "^16.7.0",
 		"react-bootstrap": "^1.0.1",
 		"react-dom": "^16.7.0",
@@ -37,7 +39,7 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "react-scripts build",
+		"build": "react-scripts build && echo '/* /index.html  200' | cat >build/_redirects",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},

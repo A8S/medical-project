@@ -12,6 +12,7 @@ import { subscribe } from '../../Api/Subscribe';
 import { isAuthenticated } from '../../Api/';
 import { Container, Row, Col } from 'react-bootstrap';
 import home from '../../Images/Home3.jpg';
+import Footer from '../Footer';
 
 class Home extends Component {
 	state = {
@@ -33,9 +34,10 @@ class Home extends Component {
 			email: e.target.value,
 		});
 	};
+
 	render() {
 		return (
-			<div style={isAuthenticated() ? { minHeight: '110em' } : { minHeight: '140em' }}>
+			<div style={isAuthenticated() ? { minHeight: '910px' } : { minHeight: '3100px' }}>
 				<div
 					style={{
 						backgroundImage: `url(${Background})`,
@@ -45,7 +47,7 @@ class Home extends Component {
 						position: 'absolute',
 						backgroundSize: 'cover',
 						width: '100%',
-						height: '40em',
+						height: '100vh',
 						top: '0',
 					}}
 				>
@@ -53,52 +55,48 @@ class Home extends Component {
 						<div className="text-white text-center jbtron">
 							<Container fluid>
 								<Row>
-									<Col md={6}>
+									<Col md={6} sm={12}>
 										<img
 											src={MainSvg}
 											className="img-responsive centre-logo"
 											alt="logo"
-											style={{
-												height: '70vh',
-												width: '40vw',
-												paddingTop: '30vh',
-											}}
 										/>
 									</Col>
 
-									<Col md={6}>
+									<Col md={6} sm={12}>
 										<div style={{ paddingTop: '1em' }}>
-											<h2 className="main-title">Medical Counselling</h2>
-											<p className="lead">
-												Experience of common man help each other
-											</p>
+											<div>
+												<h2 className="main-title">Medical Counselling</h2>
+											</div>
 
-											<div
-												className="row align-items-center "
-												style={{ width: '30px' }}
-											>
-												<Link to="/Signup">
-													<button
-														type="button"
-														className="btn btn-default buttonJoin float-right"
-													>
-														Share Experience
-													</button>
-												</Link>
+											<div>
+												<p className="lead">
+													Experience of common man help each other
+												</p>
+											</div>
 
-												<Link to="/Signup">
-													<button
-														type="button"
-														className="btn  buttonJoin float-left"
-														style={{
-															backgroundColor: '#343a40',
-															color: 'rgb(200,200,200)',
-															fontWeight: '800',
-														}}
-													>
-														Ask Suggestion
-													</button>
-												</Link>
+											<div className="row mainbtn">
+												<div className="mainBtn">
+													<Link to="/Signup">
+														<button
+															type="button"
+															className="btn btn-default buttonJoin buttonJoinLight float-right"
+														>
+															Share Experience
+														</button>
+													</Link>
+												</div>
+
+												<div className="mainBtn">
+													<Link to="/Signup">
+														<button
+															type="button"
+															className="btn  buttonJoin buttonJoinDark float-left"
+														>
+															Ask Suggestion
+														</button>
+													</Link>
+												</div>
 											</div>
 										</div>
 									</Col>
@@ -214,6 +212,7 @@ class Home extends Component {
 						</div>
 					)}
 				</div>
+				<div />
 			</div>
 		);
 	}

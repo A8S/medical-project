@@ -8,6 +8,7 @@ import AboutUs from './Components/AboutUs';
 import Diseases from './Components/Diseases';
 import SubdiseaseDetail from './Components/Diseases/SubdiseaseDetail';
 import Pathy from './Components/Pathy';
+import AddPathy from './Components/Pathy/AddPathy';
 import ContactUs from './Components/ContactUs';
 import Profile from './Components/Profile';
 import EditProfile from './Components/Profile/Edit';
@@ -39,6 +40,7 @@ const MainRouter = () => (
 			<Route exact path="/posts" component={ViewPosts} />
 			<Route exact path="/post/:postId" component={SinglePost} />
 			<Route exact path="/pathy" component={Pathy} />
+			<Route exact path="/add_pathy" component={AddPathy} />
 			<Route exact path="/diseases" component={Diseases} />
 			<Route exact path="/subdisease/:sdid" component={SubdiseaseDetail} />
 			<PrivateRoute exact path="/add_disease" component={AddDisease} />

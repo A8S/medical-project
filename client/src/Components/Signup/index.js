@@ -77,11 +77,16 @@ class Signup extends Component {
 										<input
 											onChange={this.handleChange('name')}
 											type="text"
-											className="form-control"
+											className="signinput"
 											value={name}
 											required
 										/>
-										<label> Name</label>
+										{(() => {
+											if (this.state.name === '') {
+												return <label className="signlabel">Name</label>;
+											}
+											return <label className="signlabel" />;
+										})()}
 									</div>
 
 									{/* <div className="form-label-group">
@@ -99,25 +104,41 @@ class Signup extends Component {
 										<input
 											onChange={this.handleChange('email')}
 											type="email"
-											className="form-control"
+											className="signinput"
 											value={email}
 											required
 										/>
-										<label>Email address</label>
+										{(() => {
+											if (this.state.email === '') {
+												return (
+													<label className="signlabel">
+														Email address
+													</label>
+												);
+											}
+											return <label className="signlabel" />;
+										})()}
 									</div>
 
 									<div className="form-label-group">
 										<input
 											onChange={this.handleChange('password')}
 											type="password"
-											className="form-control"
+											className="signinput"
 											value={password}
 											required
 										/>
-										<label>Password</label>
+										{(() => {
+											if (this.state.password === '') {
+												return (
+													<label className="signlabel">Password</label>
+												);
+											}
+											return <label className="signlabel" />;
+										})()}
 									</div>
 									<button
-										className="btn btn-lg btn-primary btn-block text-uppercase signBtn"
+										className="btn btn-lg btn-primary text-uppercase signBtn"
 										type="submit"
 										onClick={this.clickSubmit}
 									>
@@ -125,10 +146,8 @@ class Signup extends Component {
 									</button>
 									<hr className="my-4" />
 									<p className="text-center">
-										Already have an account?
-										<a href="/signin">
-											Sign In
-										</a>
+										Already have an account? {'  '}
+										<a href="/signin">Sign In</a>
 									</p>
 								</form>
 							</div>

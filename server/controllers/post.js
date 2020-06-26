@@ -112,12 +112,11 @@ exports.countPosts = async (req, res) => {
     .catch((err) => console.log(err));
 };
 
-exports.postCount =(req,res)=>{
-  console.log("this is ");
-  Post.find({},(err,result)=>{
-    console.log("fjnskdfn",result);
-  if (err){
-    
+exports.postCount = (req, res) => {
+  console.log('this is ');
+  Post.find({}, (err, result) => {
+    console.log('fjnskdfn', result);
+    if (err) {
       return res.send(err);
   }
   
@@ -316,8 +315,6 @@ exports.unlike = (req, res) => {
 exports.tags = async (req, res) => {
   console.log('this is ', req.body.tags);
   const posts = await Post.find()
-    // countDocuments() gives you total count of posts
-    
     .then((count) => {
       return Post.find({ tags: { $all: req.body.tags } })
         .populate('comments', 'text created')
@@ -334,4 +331,3 @@ exports.tags = async (req, res) => {
     })
     .catch((err) => console.log(err));
 };
-

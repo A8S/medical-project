@@ -8,6 +8,7 @@ import { getDiseases, deleteDisease, updateDisease } from '../../Api/Disease';
 import { getSubdisease } from '../../Api/Subdisease';
 import Footer from '../Footer';
 import { isAuthenticated } from '../../Api';
+import { Dropdown } from 'react-bootstrap';
 class Diseases extends React.Component {
 	constructor(props) {
 		super(props);
@@ -110,39 +111,48 @@ class Diseases extends React.Component {
 		});
 		return (
 			<div className="container-fluid disease-container" style={{ minHeight: '60vh' }}>
-				<h3 style={{ paddingTop: '1vh', fontSize: '40px', position: 'fixed' }}>
-					Categories
-				</h3>
-				<div
-					className="nav flex-column SideBar"
-					style={{ border: '2px solid rgba(0,0,0,0.25)' }}
-				>
-					<ul className="list-group">
-						{this.state.disease.map((disease, index) => {
-							return (
-								<li
-									className={`list-group-item ll ${
-										this.state.activeIndex === index ? 'active' : null
-									}`}
-									key={index}
-									onClick={() => this.onDiseaseClick(index)}
-								>
-									{disease.title}
-								</li>
-							);
-						})}
-					</ul>
-				</div>
-				<div className="main-div" style={{}}>
-					<div className="search">
-						<Autocomplete
-							filteredData={this.filteredData}
-							suggestions={this.state.subdiseases}
-						/>
+				<div className="row" style={{ paddingTop: '40px' }}>
+					<div className="col">
+						<Dropdown>
+							<Dropdown.Toggle className="dropdown">Categories</Dropdown.Toggle>
+							<Dropdown.Menu style={{ width: '400px' }}>
+								{this.state.disease.map((disease, index) => {
+									return (
+										<Dropdown.Item
+											eventKey={index}
+											onClick={() => this.onDiseaseClick(index)}
+										>
+											{disease.title}
+										</Dropdown.Item>
+									);
+								})}
+							</Dropdown.Menu>
+						</Dropdown>
 					</div>
-					<button className="btn btn-primary btn-raised" onClick={this.onAddDisease}>
-						Create Disease
-					</button>
+
+					{this.state.admin ? (
+						<div className="col">
+							<button
+								className="btn btn-primary btn-raised"
+								style={{ fontSize: '20px' }}
+								onClick={this.onAddDisease}
+							>
+								Create Disease
+							</button>
+						</div>
+					) : null}
+
+					<div className="col">
+						<div className="search">
+							<Autocomplete
+								filteredData={this.filteredData}
+								suggestions={this.state.subdiseases}
+							/>
+						</div>
+					</div>
+				</div>
+
+				<div className="main-div" style={{}}>
 					<div className="col-xs-12 col-md-12 col-sm-12 col-xs-12 mt-5 mx-40 card-container">
 						<div className="provide-card-row">{html}</div>
 					</div>
