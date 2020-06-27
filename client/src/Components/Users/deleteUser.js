@@ -24,10 +24,9 @@ class DeleteUser extends Component {
 	};
 
 	deleteConfirmed = () => {
-		const answer = window.customConfirm('Are you sure you want to delete your account?');
-		if (answer) {
+		
 			this.deleteAccount();
-		}
+		
 	};
 
 	render() {

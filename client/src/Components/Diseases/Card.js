@@ -116,7 +116,7 @@ export default class Card extends Component {
 						<div>{button}</div>
 					</div>
 
-					<p className="card-text">{this.props.data.description}</p>
+					<p className="card-text" title={this.props.data.description}>{this.props.data.description}</p>
 				</div>
 
 				<Link

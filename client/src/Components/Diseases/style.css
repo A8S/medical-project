@@ -19,8 +19,7 @@
 .card-disease {
 	border-radius: 16px !important;
 	border: 8px solid rgba(0, 0, 0, 0.125);
-
-	width: auto;
+		width: auto;
 }
 
 .search {
@@ -31,6 +30,13 @@
 
 .autosuggestionSearchField {
 	width: 80vw !important;
+}
+.card-text{
+	overflow: hidden;
+    width: 90%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .readMoreButton {

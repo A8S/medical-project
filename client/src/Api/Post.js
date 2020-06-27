@@ -140,17 +140,17 @@ export const unlike = (userId, postId) => {
 		})
 		.catch(err => console.log(err));
 };
-	export const countpost =async() => {
-		const counting=await axios.get(`${serverUrl}/api/post/count`);
-		console.log(counting);
-		return counting.data;
+export const countpost =async() => {
+	const counting=await axios.get(`${serverUrl}/api/post/count`);
+	console.log(counting);
+	return counting.data;
 // 	return fetch(`${serverUrl}/api/post/count`, {
 // 		method: 'GET',
 // 	})
 // 		.then(response => {
 // 			console.log(response);
 // 			return response;
-			
+		
 // 		})
 // 		.catch(err => console.log(err));
 };
