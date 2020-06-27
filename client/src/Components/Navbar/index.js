@@ -49,7 +49,9 @@ class NavDropdown extends React.Component {
 					className={classDropdownMenu}
 					aria-labelledby="navbarDropdown"
 					onMouseEnter={this.enterMenu}
-					onMouseLeave={this.leaveMenu}
+					onMouseLeave={e => {
+						this.showDropdown(e);
+					}}
 				>
 					{this.props.children}
 				</div>
@@ -223,7 +225,10 @@ class Navigation extends React.Component {
 										>
 											View Profile
 										</Link>
-										<Link className="dropdown-item" to={`/bookmarks`}>
+										<Link
+											className="dropdown-item"
+											to={`/user/${isAuthenticated().user._id}`}
+										>
 											Bookmarks
 										</Link>
 										<Link className="dropdown-item" to="/share_experience">
