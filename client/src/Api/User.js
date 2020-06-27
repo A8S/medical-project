@@ -1,4 +1,5 @@
 import { serverUrl } from '../variables';
+import axios from 'axios';
 export const read = async (userId, token) => {
 	try {
 		const response = await fetch(`${serverUrl}/api/user/${userId}`, {
