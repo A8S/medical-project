@@ -23,7 +23,7 @@ class AddPathy extends React.Component {
 	handleSubmit = event => {
 		console.log('ddnjsanjsnfjnfjansdsan');
 		event.preventDefault();
-		createPathy(JSON.stringify(this.state));
+		createPathy(this.state.title, this.state.description, this.state.effective);
 	};
 
 	render() {

@@ -1,10 +1,10 @@
 import { serverUrl } from '../variables';
 import axios from 'axios';
 
-export const createPathy = async (title, description, effective) => {
-	return axios({
-		method: 'post',
-		url: `${serverUrl}/api/pathy`,
+export const createPathy = (title, description, effective) => {
+	return fetch(`${serverUrl}/api/pathy`, {
+		method: 'POST',
+
 		data: JSON.stringify({ title: title, description: description, effective: effective }),
 	})
 		.then(function(response) {
@@ -16,10 +16,9 @@ export const createPathy = async (title, description, effective) => {
 };
 
 // Read
-export const getPathy = data => {
+export const getPathy = () => {
 	return fetch(`${serverUrl}/api/pathys`, {
 		method: 'GET',
-		data: data,
 	})
 		.then(response => {
 			return response.json();

@@ -7,7 +7,7 @@ const {
   deletePathy,
 } = require('../controllers/pathys');
 
-var corsOptions = {
+const corsOptions = {
   origin: ['https://gifted-gates-e3aa20.netlify.app', 'http://localhost:3000'],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
@@ -24,14 +24,14 @@ router.post('/pathy', cors(corsOptions), function (req, res) {
   createPathy(req, res);
 });
 
-//update route
-router.put('/pathy', (req, res) => {
-  updatePathy(req, res);
-});
+// //update route
+// router.put('/pathy', (req, res) => {
+//   updatePathy(req, res);
+// });
 
-//delete route
-router.delete('/pathy/delete', (req, res) => {
-  deletePathy(req, res);
-});
+// //delete route
+// router.delete('/pathy/delete', (req, res) => {
+//   deletePathy(req, res);
+// });
 
 module.exports = router;
