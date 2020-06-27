@@ -38,181 +38,196 @@ class Home extends Component {
 	render() {
 		return (
 			<div style={isAuthenticated() ? { minHeight: '910px' } : { minHeight: '3100px' }}>
-				<div
-					style={{
-						backgroundImage: `url(${Background})`,
+				<div className="mobile">
+					<div
+						style={{
+							backgroundImage: `url(${Background})`,
 
-						// flex: '1',
-						// alignSelf: 'stretch',
-						position: 'absolute',
-						backgroundSize: 'cover',
-						width: '100%',
-						height: '100vh',
-						top: '0',
-					}}
-				>
-					<div className="container-fluid" style={{ minHeight: '50px' }}>
-						<div className="text-white text-center jbtron">
-							<Container fluid>
-								<Row>
-									<Col md={6} sm={12}>
-										<img
-											src={MainSvg}
-											className="img-responsive centre-logo"
-											alt="logo"
-										/>
-									</Col>
+							// flex: '1',
+							// alignSelf: 'stretch',
+							position: 'absolute',
+							backgroundSize: 'cover',
+							width: '100%',
+							height: '100vh',
+							top: '0',
+						}}
+					>
+						<div className="container-fluid" style={{ minHeight: '50px' }}>
+							<div className="text-white text-center jbtron">
+								<Container fluid>
+									<Row>
+										<Col md={6} sm={12}>
+											<img
+												src={MainSvg}
+												className="img-responsive centre-logo"
+												alt="logo"
+											/>
+										</Col>
 
-									<Col md={6} sm={12}>
-										<div style={{ paddingTop: '1em' }}>
-											<div>
-												<h2 className="main-title">Medical Counselling</h2>
+										<Col md={6} sm={12}>
+											<div style={{ paddingTop: '1em' }}>
+												<div>
+													<h2 className="main-title">
+														Medical Counselling
+													</h2>
+												</div>
+
+												<div>
+													<p className="lead">
+														Experience of common man help each other
+													</p>
+												</div>
+
+												<div className="row mainbtn">
+													<div className="mainBtn">
+														<Link to="/Signup">
+															<button
+																type="button"
+																className="btn btn-default buttonJoin buttonJoinLight float-right"
+															>
+																Share Experience
+															</button>
+														</Link>
+													</div>
+
+													<div className="mainBtn">
+														<Link to="/Signup">
+															<button
+																type="button"
+																className="btn  buttonJoin buttonJoinDark float-left"
+															>
+																Ask Suggestion
+															</button>
+														</Link>
+													</div>
+												</div>
 											</div>
+										</Col>
+									</Row>
+								</Container>
+							</div>
+						</div>
 
-											<div>
-												<p className="lead">
-													Experience of common man help each other
+						{isAuthenticated() ? null : (
+							<div>
+								<CardLayout />
+								<div>
+									<h4 className="text-center mb-4 mt-5">
+										What people say about our platform
+									</h4>
+									<Testimonial slides={Testimonialdata} />
+								</div>
+								<div className="sta row">
+									<div className="col-md-3">
+										<div className="card shadow p-3 mb-5 bg-white rounded">
+											<div className="card-body">
+												<h5 className="card-title text-center font-weight-bold">
+													700
+												</h5>
+												<p className="card-text text-center">
+													No. of Members
 												</p>
 											</div>
-
-											<div className="row mainbtn">
-												<div className="mainBtn">
-													<Link to="/Signup">
-														<button
-															type="button"
-															className="btn btn-default buttonJoin buttonJoinLight float-right"
-														>
-															Share Experience
-														</button>
-													</Link>
-												</div>
-
-												<div className="mainBtn">
-													<Link to="/Signup">
-														<button
-															type="button"
-															className="btn  buttonJoin buttonJoinDark float-left"
-														>
-															Ask Suggestion
-														</button>
-													</Link>
-												</div>
+										</div>
+									</div>
+									<div className="col-md-3">
+										<div className="card shadow p-3 mb-5 bg-white rounded">
+											<div className="card-body">
+												<h5 className="card-title text-center font-weight-bold">
+													4020
+												</h5>
+												<p className="card-text text-center">
+													No. of Visitors
+												</p>
 											</div>
 										</div>
-									</Col>
-								</Row>
-							</Container>
-						</div>
+									</div>
+									<div className="col-md-3">
+										<div className="card shadow p-3 mb-5 bg-white rounded">
+											<div className="card-body">
+												<h5 className="card-title text-center font-weight-bold">
+													120
+												</h5>
+												<p className="card-text text-center">
+													No. of Disease
+												</p>
+											</div>
+										</div>
+									</div>
+									<div className="col-md-3">
+										<div className="card shadow p-3 mb-5 bg-white rounded">
+											<div className="card-body">
+												<h5 className="card-title text-center font-weight-bold">
+													80+
+												</h5>
+												<p className="card-text text-center">
+													No. of Pathy
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="container">
+									<Link to="/Signup">
+										<button
+											type="button"
+											className="btn btn-primary buttonJoin1"
+										>
+											Become a Member
+										</button>
+									</Link>
+								</div>
+
+								<form
+									className="container form-inline news-letter d-flex flex-column"
+									onSubmit={this.onSubscribe}
+								>
+									<div>
+										<h2 className="newletter">
+											Subscribe to our Newsletter for latest posts
+										</h2>
+										<h4 className="news-letter-subheading">
+											You will recieve email notifications for all our new
+											posts.
+										</h4>
+									</div>
+									<div className="subscribe-div">
+										<label class="sr-only" for="inlineFormInputName2">
+											Name
+										</label>
+										<input
+											type="email"
+											required-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+											value={this.state.email}
+											onChange={this.onChange}
+											class="form-control"
+											id="inlineFormInputName2"
+											placeholder="Email"
+											style={{
+												width: '20em',
+												border: '2px solid rgba(0,0,0,0.25)',
+												fontSize: '16px',
+											}}
+										/>
+										{/* <p></p> */}
+										<button
+											type="submit"
+											class="btn btn-outline-primary"
+											style={{
+												marginLeft: '20px',
+												border: '3px solid #007bff',
+												width: '6rem',
+												fontSize: '14px',
+											}}
+										>
+											Subscribe
+										</button>
+									</div>
+								</form>
+							</div>
+						)}
 					</div>
-
-					{isAuthenticated() ? null : (
-						<div>
-							<CardLayout />
-							<div>
-								<h4 className="text-center mb-4 mt-5">
-									What people say about our platform
-								</h4>
-								<Testimonial slides={Testimonialdata} />
-							</div>
-							<div className="sta row">
-								<div className="col-md-3">
-									<div className="card shadow p-3 mb-5 bg-white rounded">
-										<div className="card-body">
-											<h5 className="card-title text-center font-weight-bold">
-												700
-											</h5>
-											<p className="card-text text-center">No. of Members</p>
-										</div>
-									</div>
-								</div>
-								<div className="col-md-3">
-									<div className="card shadow p-3 mb-5 bg-white rounded">
-										<div className="card-body">
-											<h5 className="card-title text-center font-weight-bold">
-												4020
-											</h5>
-											<p className="card-text text-center">No. of Visitors</p>
-										</div>
-									</div>
-								</div>
-								<div className="col-md-3">
-									<div className="card shadow p-3 mb-5 bg-white rounded">
-										<div className="card-body">
-											<h5 className="card-title text-center font-weight-bold">
-												120
-											</h5>
-											<p className="card-text text-center">No. of Disease</p>
-										</div>
-									</div>
-								</div>
-								<div className="col-md-3">
-									<div className="card shadow p-3 mb-5 bg-white rounded">
-										<div className="card-body">
-											<h5 className="card-title text-center font-weight-bold">
-												80+
-											</h5>
-											<p className="card-text text-center">No. of Pathy</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div className="container">
-								<Link to="/Signup">
-									<button type="button" className="btn btn-primary buttonJoin1">
-										Become a Member
-									</button>
-								</Link>
-							</div>
-
-							<form
-								className="container form-inline news-letter d-flex flex-column"
-								onSubmit={this.onSubscribe}
-							>
-								<div>
-									<h2 className="newletter">
-										Subscribe to our Newsletter for latest posts
-									</h2>
-									<h4 className="news-letter-subheading">
-										You will recieve email notifications for all our new posts.
-									</h4>
-								</div>
-								<div className="subscribe-div">
-									<label class="sr-only" for="inlineFormInputName2">
-										Name
-									</label>
-									<input
-										type="email"
-										required-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-										value={this.state.email}
-										onChange={this.onChange}
-										class="form-control"
-										id="inlineFormInputName2"
-										placeholder="Email"
-										style={{
-											width: '20em',
-											border: '2px solid rgba(0,0,0,0.25)',
-											fontSize: '16px',
-										}}
-									/>
-									{/* <p></p> */}
-									<button
-										type="submit"
-										class="btn btn-outline-primary"
-										style={{
-											marginLeft: '20px',
-											border: '3px solid #007bff',
-											width: '6rem',
-											fontSize: '14px',
-										}}
-									>
-										Subscribe
-									</button>
-								</div>
-							</form>
-						</div>
-					)}
 				</div>
-				<div />
 			</div>
 		);
 	}

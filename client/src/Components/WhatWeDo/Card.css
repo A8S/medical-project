@@ -4,7 +4,6 @@
 
 ._card {
 	height: 15px;
-
 }
 
 .card-img-top {
@@ -25,4 +24,10 @@
 
 .divider {
 	border-right: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+	.mobHide {
+		display: none;
+	}
 }

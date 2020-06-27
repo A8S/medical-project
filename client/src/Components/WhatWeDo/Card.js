@@ -10,7 +10,7 @@ const Card = props => {
 				<img className=" card-img-top img-fluid  mt-2 _card" alt="card" src={props.image} />
 				<h5 className="  card-title text-center font-weight-bold mt-3">{props.title}</h5>
 			</div>
-			<div>
+			<div className="mobHide">
 				<h5 className="  lead text-center mt-3 float-right">{props.description}</h5>
 			</div>
 		</div>
