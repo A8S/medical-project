@@ -36,7 +36,7 @@ router.put('/post/unlike', unlike);
 //tags
 router.post('/post/tags', tags);
 
-router.get('/post/count',postCount);
+router.get('/post/count', postCount);
 router.post(
   // use requireSignin as middleware
   '/post/new/:userId', // in order to post something we need userId
@@ -48,8 +48,8 @@ router.get('/posts/by/:userId', requireSignin, postsByUser);
 
 // no mandatory to add requireSignin as userId is there in params
 router.get('/post/:postId', cors(corsOptions), singlePost);
-router.put('/post/:postId', requireSignin, isPoster, updatePost);
-router.delete('/post/:postId', requireSignin, isPoster, deletePost);
+router.put('/post/:postId', requireSignin, updatePost);
+router.delete('/post/:postId', requireSignin, deletePost);
 
 // photo
 router.get('/post/photo/:postId', photo);

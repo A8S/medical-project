@@ -6,7 +6,7 @@
 	/* margin: 20px; */
 	border-radius: 50px;
 	width: 600px;
-	margin-top: 100px;
+	margin-top: 50px;
 	position: absolute;
 	left: 8%;
 
@@ -26,7 +26,7 @@
 	text-align: center;
 	align-items: center;
 	align-content: center;
-	margin-top: 200px;
+	margin-top: 100px;
 }
 .mainBtn {
 	display: inline;
@@ -45,13 +45,13 @@
 
 .main-title {
 	font-weight: 600 !important;
-	font-size: 3.5em;
-	margin-top: 2em;
+	font-size: 4.5em;
+	margin-top: 3em;
 	padding-right: 25%;
 }
 
 .lead {
-	font-size: 20px !important;
+	font-size: 30px !important;
 	font-weight: 400;
 	/* margin: 0 !important; */
 	margin-right: 25%;
@@ -138,8 +138,8 @@
 	.centre-logo {
 		padding-top: 0 !important;
 		position: absolute;
-		left: 35%;
-		margin-top: 40%;
+		left: 30%;
+		margin-top: 30%;
 	}
 	.main-title {
 		padding-left: 20%;
@@ -148,15 +148,41 @@
 		margin: 0;
 		margin-top: 5%;
 		margin-left: 20%;
-		width: 300px;
+		/* width: 60vw; */
 		position: absolute;
 	}
 	.mainbtn {
 		margin-top: 70%;
+		position: absolute;
+		left: 30%;
 	}
 	.mobile {
 		height: 3500px !important;
 	}
 }
 @media only screen and (max-width: 500px) {
+	.main-title {
+		margin: 0;
+		padding: 0;
+		margin-top: 30%;
+		padding-left: 5%;
+
+		font-size: 40px;
+	}
+	.lead {
+		margin-left: 0%;
+		margin-top: 0%;
+	}
+	.centre-logo {
+		margin-top: 36%;
+		width: 30vh;
+		left: 20%;
+	}
+	.mainbtn {
+		left: 15%;
+		margin-top: 100%;
+	}
+	.buttonJoin {
+		width: 70vw;
+	}
 }

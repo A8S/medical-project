@@ -20,6 +20,7 @@ class EditProfile extends React.Component {
 			fileSize: 0,
 			loading: false,
 			about: '',
+			photo: '',
 		};
 	}
 
@@ -59,10 +60,7 @@ class EditProfile extends React.Component {
 			return false;
 		}
 		// email@domain.com
-		if (!/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/.test(email)) {
-			this.setState({ error: 'A valid Email is required', loading: false });
-			return false;
-		}
+
 		if (password.length >= 1 && password.length <= 5) {
 			this.setState({
 				error: 'Password must be at least 6 characters long',
@@ -148,13 +146,24 @@ class EditProfile extends React.Component {
 					<div className="col-md-4">
 						<div className="profile-img">
 							{/* <img src={DefaultProfile} alt="profile pic" /> */}
-							<img
-								style={{ height: '200px', width: 'auto' }}
-								className="img-thumbnail"
-								src={photoUrl}
-								onError={i => (i.target.src = `${DefaultProfile}`)}
-								alt={name}
-							/>
+							{this.state.photo ? (
+								<img
+									style={{ height: '200px', width: 'auto' }}
+									className="img-thumbnail"
+									src={photoUrl}
+									onError={i => (i.target.src = `${DefaultProfile}`)}
+									alt={name}
+								/>
+							) : (
+								<img
+									style={{ height: '200px', width: 'auto' }}
+									className="img-thumbnail"
+									src={photoUrl}
+									onError={i => (i.target.src = `${DefaultProfile}`)}
+									alt={name}
+								/>
+							)}
+
 							<div className="file btn btn-lg btn-primary">
 								Change Photo
 								<input

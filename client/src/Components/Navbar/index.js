@@ -96,6 +96,7 @@ class Navigation extends React.Component {
 						backgroundColor:
 							this.state.status === 'top' ? 'rgba(0,0,0,0.3)' : '#343a40',
 						color: this.state.status === 'top' ? 'white' : 'blue',
+						width: '100%',
 					}}
 				>
 					<Link className="navbar-brand" to="/">

@@ -1,13 +1,13 @@
-/* import { serverUrl } from '../variables';
+// /* import { serverUrl } from '../variables';
 import axios from 'axios';
 
-export const createSubdisease = async (subdisease, dId) => {
+export const createPathy = async (, dId) => {
 	console.log(subdisease);
 	console.log(dId);
 	return axios({
 		method: 'post',
 		url: `${serverUrl}/api/pathy/${dId}`,
-		data: subdisease
+		data: subdisease,
 	})
 		.then(function(response) {
 			return response;
@@ -15,29 +15,28 @@ export const createSubdisease = async (subdisease, dId) => {
 		.catch(function(error) {
 			return error;
 		});
-
 };
 
 // Read
-export const getSubdisease = (sdId) => {
+export const getSubdisease = sdId => {
 	return fetch(`${serverUrl}/api/pathys/${sdId}`, {
-		method: 'GET'
+		method: 'GET',
 	})
-		.then((response) => {
+		.then(response => {
 			return response.json();
 		})
-		.catch((err) => console.log(err));
+		.catch(err => console.log(err));
 };
 
 // Delete
-export const deleteSubdisease = (sdId) => {
+export const deleteSubdisease = sdId => {
 	return fetch(`${serverUrl}/api/pathys/delete/${sdId}`, {
-		method: 'DELETE'
+		method: 'DELETE',
 	})
-		.then((response) => {
+		.then(response => {
 			return response.json();
 		})
-		.catch((err) => console.log(err));
+		.catch(err => console.log(err));
 };
 
 // Update
@@ -47,7 +46,7 @@ export const updateSubdisease = (sdId, subdisease) => {
 	return axios({
 		method: 'put',
 		url: `${serverUrl}/api/pathy/${sdId}`,
-		data: subdisease
+		data: subdisease,
 	})
 		.then(function(response) {
 			return response;
@@ -56,4 +55,3 @@ export const updateSubdisease = (sdId, subdisease) => {
 			return error;
 		});
 };
-*/
