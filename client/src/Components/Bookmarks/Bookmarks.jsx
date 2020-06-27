@@ -13,7 +13,7 @@ export default class Bookmarks extends Component {
 	componentDidMount() {
 		const token = isAuthenticated().token;
 		read(isAuthenticated().user._id, token).then(data => {
-			if (data) {
+			if (!data) {
 				this.setState({ redirectToSignin: true });
 			} else {
 				this.setState({ Bookmarks: data.bookmarks });

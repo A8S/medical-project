@@ -223,16 +223,13 @@ class Navigation extends React.Component {
 										>
 											View Profile
 										</Link>
-										<Link
-											className="dropdown-item"
-											to={`/user/${isAuthenticated().user._id}`}
-										>
+										<Link className="dropdown-item" to={`/bookmarks`}>
 											Bookmarks
 										</Link>
 										<Link className="dropdown-item" to="/share_experience">
 											Share Experience
 										</Link>
-									
+
 										<Link className="dropdown-item" to="/users">
 											Users
 										</Link>
