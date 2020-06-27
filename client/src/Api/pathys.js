@@ -1,13 +1,11 @@
-// /* import { serverUrl } from '../variables';
+import { serverUrl } from '../variables';
 import axios from 'axios';
 
-export const createPathy = async (, dId) => {
-	console.log(subdisease);
-	console.log(dId);
+export const createPathy = async (title, description, effective) => {
 	return axios({
 		method: 'post',
-		url: `${serverUrl}/api/pathy/${dId}`,
-		data: subdisease,
+		url: `${serverUrl}/api/pathy`,
+		data: JSON.stringify({ title: title, description: description, effective: effective }),
 	})
 		.then(function(response) {
 			return response;
@@ -18,9 +16,10 @@ export const createPathy = async (, dId) => {
 };
 
 // Read
-export const getSubdisease = sdId => {
-	return fetch(`${serverUrl}/api/pathys/${sdId}`, {
+export const getPathy = data => {
+	return fetch(`${serverUrl}/api/pathys`, {
 		method: 'GET',
+		data: data,
 	})
 		.then(response => {
 			return response.json();
@@ -29,29 +28,29 @@ export const getSubdisease = sdId => {
 };
 
 // Delete
-export const deleteSubdisease = sdId => {
-	return fetch(`${serverUrl}/api/pathys/delete/${sdId}`, {
-		method: 'DELETE',
-	})
-		.then(response => {
-			return response.json();
-		})
-		.catch(err => console.log(err));
-};
+// export const deleteSubdisease = sdId => {
+// 	return fetch(`${serverUrl}/api/pathys/delete/${sdId}`, {
+// 		method: 'DELETE',
+// 	})
+// 		.then(response => {
+// 			return response.json();
+// 		})
+// 		.catch(err => console.log(err));
+// };
 
-// Update
-export const updateSubdisease = (sdId, subdisease) => {
-	console.log(sdId);
-	console.log(subdisease);
-	return axios({
-		method: 'put',
-		url: `${serverUrl}/api/pathy/${sdId}`,
-		data: subdisease,
-	})
-		.then(function(response) {
-			return response;
-		})
-		.catch(function(error) {
-			return error;
-		});
-};
+// // Update
+// export const updateSubdisease = (sdId, subdisease) => {
+// 	console.log(sdId);
+// 	console.log(subdisease);
+// 	return axios({
+// 		method: 'put',
+// 		url: `${serverUrl}/api/pathy/${sdId}`,
+// 		data: subdisease,
+// 	})
+// 		.then(function(response) {
+// 			return response;
+// 		})
+// 		.catch(function(error) {
+// 			return error;
+// 		});
+// };

@@ -1,28 +1,29 @@
 import React from 'react';
 import './style.css';
+import { createPathy } from '../../Api/pathys';
 
 class AddPathy extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			name: '',
-			mef: '',
+			title: '',
+			effective: '',
 			description: '',
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleChange = event => {
+	handleChange = name => event => {
 		this.setState({
-			[event.target.name]: event.target.value,
+			[name]: event.target.value,
 		});
 	};
 
 	handleSubmit = event => {
+		console.log('ddnjsanjsnfjnfjansdsan');
 		event.preventDefault();
-		alert(JSON.stringify(this.state));
-		console.log(JSON.stringify(this.state));
+		createPathy(JSON.stringify(this.state));
 	};
 
 	render() {
@@ -43,8 +44,8 @@ class AddPathy extends React.Component {
 									type="text"
 									className="form-control"
 									name="name"
-									value={this.state.name}
-									onChange={this.handleChange}
+									value={this.state.title}
+									onChange={this.handleChange('title')}
 								/>
 							</div>
 							<div className="form-group">
@@ -52,8 +53,8 @@ class AddPathy extends React.Component {
 								<select
 									className="form-control"
 									name="mef"
-									value={this.state.mef}
-									onChange={this.handleChange}
+									value={this.state.effective}
+									onChange={this.handleChange('effective')}
 								>
 									<option>Select Disease</option>
 									<option>Cancer</option>
@@ -69,10 +70,10 @@ class AddPathy extends React.Component {
 									className="form-control"
 									name="description"
 									value={this.state.description}
-									onChange={this.handleChange}
+									onChange={this.handleChange('description')}
 								/>
 							</div>
-							<button type="Submit" className="btn btn-primary">
+							<button onClick={this.handleSubmit} className="btn btn-primary">
 								Submit
 							</button>
 						</form>
