@@ -11,7 +11,7 @@ const Card = props => {
 				<h5 className="  card-title text-center font-weight-bold mt-3">{props.title}</h5>
 			</div>
 			<div className="mobHide">
-				<h5 className="  lead text-center mt-3 float-right">{props.description}</h5>
+				<h5 className=" text-center mt-3 float-right">{props.description}</h5>
 			</div>
 		</div>
 	);
