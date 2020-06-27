@@ -10,7 +10,7 @@ import DefaultProfile from '../../Images/avatar.png';
 import FollowProfileButton from '../Users/FollowProfileButton';
 import ProfileTabs from './ProfileTabs';
 import DeleteUser from '../Users/deleteUser';
-import {serverUrl} from '../variables';
+import { serverUrl } from '../variables';
 
 class Profile extends react.Component {
 	constructor() {
@@ -56,6 +56,7 @@ class Profile extends react.Component {
 			if (data.error) {
 				this.setState({ redirectToSignin: true });
 			} else {
+				console.log('fsasdadasdas', data.bookmarks);
 				const following = this.checkFollow(data);
 				this.setState({ user: data, following });
 				this.loadPosts(data._id);
@@ -89,9 +90,7 @@ class Profile extends react.Component {
 		if (redirectToSignin) return <Redirect to="/signin" />;
 
 		const photoUrl = user._id
-			? `${serverUrl}/api/user/photo/${
-					user._id
-			  }?${new Date().getTime()}`
+			? `${serverUrl}/api/user/photo/${user._id}?${new Date().getTime()}`
 			: DefaultProfile;
 
 		return (

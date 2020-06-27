@@ -52,6 +52,35 @@ export const deleteSubdisease = sdId => {
 		.catch(err => console.log(err));
 };
 
+export const bookmark = (userId, sdId) => {
+	return fetch(`${serverUrl}/api/user/bookmark`, {
+		method: 'PUT',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({ userId, sdId }),
+	})
+		.then(response => {
+			return response.json();
+		})
+		.catch(err => console.log(err));
+};
+export const unbookmark = (userId, sdId) => {
+	return fetch(`${serverUrl}/api/user/unbookmark`, {
+		method: 'PUT',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({ userId, sdId }),
+	})
+		.then(response => {
+			return response.json();
+		})
+		.catch(err => console.log(err));
+};
+
 export const book = (userId, postId) => {
 	return fetch(`${serverUrl}/api/subdisease/book/${postId}`, {
 		method: 'PUT',

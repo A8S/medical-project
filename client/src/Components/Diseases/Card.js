@@ -12,7 +12,7 @@ import Cancer from '../../Images/Diseases/1.png';
 import { deleteDisease } from '../../Api/Disease';
 import { Button } from 'react-bootstrap';
 import { isAuthenticated } from '../../Api';
-import { book, unbook } from '../../Api/Subdisease';
+import { book, unbook, bookmark, unbookmark } from '../../Api/Subdisease';
 import { getSubdisease } from '../../Api/Subdisease';
 import SubdiseaseDetail from './SubdiseaseDetail';
 
@@ -44,11 +44,21 @@ export default class Card extends Component {
 			return false;
 		}
 		const callApi = this.state.bookmark ? unbook : book;
+		const callBookmarkApi = this.state.bookmark ? unbookmark : bookmark;
 		const userId = isAuthenticated().user._id;
 		const postId = this.props.data._id;
 		console.log('postId', postId);
 		console.log(this.props.data._id);
 		callApi(userId, postId).then(data => {
+			if (data && data.error) {
+				console.log(data.error);
+			} else {
+				this.setState({
+					bookmark: !this.state.book,
+				});
+			}
+		});
+		callBookmarkApi(userId, postId).then(data => {
 			if (data && data.error) {
 				console.log(data.error);
 			} else {

@@ -118,14 +118,13 @@ exports.postCount = (req, res) => {
     console.log('fjnskdfn', result);
     if (err) {
       return res.send(err);
-  }
-  
-      console.log("fjnskdfn",result.length)
-      let Obj={count:result.length};
-     res.status(200).json(Obj);
-  }
-  )
-}
+    }
+
+    console.log('fjnskdfn', result.length);
+    let Obj = { count: result.length };
+    res.status(200).json(Obj);
+  });
+};
 // to test this method we need to enter x-www-form-urlencoded option in postman
 exports.createPost = (req, res, next) => {
   // console.log('divyanshu');
@@ -194,8 +193,9 @@ exports.postsByUser = (req, res) => {
 // };
 
 exports.isPoster = (req, res, next) => {
-  let sameUser = req.post && req.auth && req.post.postedBy._id == req.auth._id;
-  let adminUser = req.post && req.auth && req.post.auth.role === 'admin';
+  const sameUser =
+    req.post && req.auth && req.post.postedBy._id == req.auth._id;
+  const adminUser = req.post && req.auth && req.post.auth.role === 'admin';
   let isPoster = sameUser || adminUser;
 
   console.log('req.post ', req.post, ' req.auth ', req.auth);

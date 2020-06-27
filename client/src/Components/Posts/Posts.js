@@ -4,12 +4,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { list } from '../../Api/Post';
 // import DefaultPost from '../../Images/mountains.jpg';
-import {countpost} from '../../Api/Post'
+import { countpost } from '../../Api/Post';
 import { Table, Pagination } from 'react-bootstrap';
 
 import './style.css';
 import { isAuthenticated } from '../../Api';
-
 
 class Posts extends React.Component {
 	constructor() {
@@ -20,7 +19,7 @@ class Posts extends React.Component {
 			redirectToSignin: false,
 			noMorePosts: false,
 			bookmark: false,
-			count:10,
+			count: 10,
 		};
 	}
 
@@ -38,17 +37,15 @@ class Posts extends React.Component {
 			if (data.error) {
 				console.log(data.error);
 			} else {
-				parseInt(data.count,10);
+				parseInt(data.count, 10);
 				this.setState({ count: data.count });
 			}
 		});
 	};
 
-
 	componentDidMount() {
 		this.loadPosts(this.state.page);
 		this.counter();
-			
 	}
 
 	loadMore = number => {
@@ -71,8 +68,8 @@ class Posts extends React.Component {
 
 	renderPosts = posts => {
 		let items = [];
-		console.log(Math.ceil(this.state.count/7));
-		for (let number = 1; number <= Math.ceil(this.state.count/7); number++) {
+		console.log(Math.ceil(this.state.count / 7));
+		for (let number = 1; number <= Math.ceil(this.state.count / 7); number++) {
 			items.push(
 				<Pagination.Item
 					key={number}

@@ -16,6 +16,7 @@ import Users from './Components/Users';
 import FindPeople from './Components/FindPeople';
 import MyPosts from './Components/Posts/MyPosts';
 import EditExperience from './Components/ShareExperience/EditExperience';
+import Bookmarks from './Components/Bookmarks/Bookmarks';
 // import AddTestimonial from './Components/AddTestimonial';
 // import AskSuggestion from './Components/AskSuggestion';
 import ViewPosts from './Components/Posts';
@@ -51,6 +52,7 @@ const MainRouter = () => (
 			<Route exact path="/aboutus" component={AboutUs} />
 			<Route exact path="/contactus" component={ContactUs} />
 			<Route exact path="/feedback" component={Feedback} />
+			<Route exact path="/bookmarks" component={Bookmarks} />
 
 			<Route exact path="/signin" component={Signin} />
 			<Route exact path="/signup" component={Signup} />
