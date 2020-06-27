@@ -19,7 +19,7 @@
 .card-disease {
 	border-radius: 16px !important;
 	border: 8px solid rgba(0, 0, 0, 0.125);
-	width: auto;
+		width: auto;
 }
 
 .search {
@@ -54,6 +54,20 @@
 	border: 1px solid #999;
 	padding: 0.5rem;
 	width: 100%;
+}
+.card-text{
+	overflow: hidden;
+    width: 90%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.card-text{
+	overflow: hidden;
+    width: 90%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .no-suggestions {
