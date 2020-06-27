@@ -195,8 +195,8 @@ exports.postsByUser = (req, res) => {
 // };
 
 exports.isPoster = (req, res, next) => {
-  let sameUser = req.post && req.auth && req.post.postedBy._id == req.auth._id;
-  let adminUser = req.post && req.auth && req.post.auth.role === 'admin';
+  const sameUser = req.post && req.auth && req.post.postedBy._id == req.auth._id;
+  const  adminUser = req.post && req.auth && req.post.auth.role === 'admin';
   let isPoster = sameUser || adminUser;
 
   console.log('req.post ', req.post, ' req.auth ', req.auth);

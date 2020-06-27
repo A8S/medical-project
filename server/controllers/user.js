@@ -275,7 +275,7 @@ exports.allUsers = (req, res) => {
         error: err,
       });
     }
-    return res.json(users.length);
+    return res.json(users);
   });
 };
 

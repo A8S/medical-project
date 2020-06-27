@@ -73,10 +73,10 @@ class SinglePost extends Component {
 	};
 
 	deleteConfirmed = () => {
-		const answer = window.customconfirm('Are you sure you want to delete the post?');
-		if (answer) {
+		
+		
 			this.deletePost();
-		}
+	
 	};
 
 	renderPost = post => {
