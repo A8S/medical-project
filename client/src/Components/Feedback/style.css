@@ -5,6 +5,6 @@
 	margin-top: 112px;
 }
 .scroll-y {
-	height: 400px;
+	height: 70vh;
 	overflow-y: auto;
 }

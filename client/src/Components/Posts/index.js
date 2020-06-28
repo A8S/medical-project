@@ -15,26 +15,31 @@ class ViewPosts extends React.Component {
 	render() {
 		const { history } = this.props;
 		return (
-			<div className="container mb-5" style={{ minHeight: '60vh' }}>
-				<h2 className="mt-5">Posts</h2>
-				<p className="lead">
-					{' '}
-					View all type of post like share experience, asking suggestions
-				</p>
-				<div className="text-right">
-					<p className="btn btn-outline-primary btn-sm postButton">
-						<Link
-							className="nav-link"
-							style={isActive(history, '/share_experience')}
-							to="/share_experience"
-						>
-							<i className="fa fa-pencil-square-o mr-2" /> Share Experience
-						</Link>
-					</p>
+			<>
+				<div className="container mb-5">
+					<div>
+						<h2 className="mt-5">Posts</h2>
+						<p className="lead lead-post">
+							{' '}
+							View all type of post like share experience, asking suggestions
+						</p>
+						<div className="text-right">
+							<p className="btn btn-outline-primary btn-sm postButton">
+								<Link
+									className="nav-link share-exp-btn"
+									style={isActive(history, '/share_experience')}
+									to="/share_experience"
+								>
+									<i className="fa fa-pencil-square-o mr-2" /> Share Experience
+								</Link>
+							</p>
+						</div>
+					</div>
 				</div>
-
-				<Posts />
-			</div>
+				<div className="container mob-table" style={{ overflow: 'scroll' }}>
+					<Posts />
+				</div>
+			</>
 		);
 	}
 }

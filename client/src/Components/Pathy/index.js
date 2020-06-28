@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import { getPathy } from '../../Api/pathys';
+import { isAuthenticated } from '../../Api';
 
 class Pathy extends React.Component {
 	state = {
@@ -20,10 +21,12 @@ class Pathy extends React.Component {
 		return (
 			<div className="container">
 				<br />
-				<a href="/add_pathy" className="btn btn-outline-primary btn-sm">
-					{' '}
-					<i className="fa fa-plus" /> Add New
-				</a>
+				{isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+					<a href="/add_pathy" className="btn btn-outline-primary btn-sm">
+						{' '}
+						<i className="fa fa-plus" /> Add New
+					</a>
+				)}
 
 				<h2 className="my-5">Pathy</h2>
 

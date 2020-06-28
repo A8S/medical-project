@@ -146,15 +146,42 @@
 	}
 	.lead {
 		margin: 0;
-		margin-top: 5%;
-		margin-left: 20%;
+		margin-top: 0%;
+		margin-left: 0%;
 		/* width: 60vw; */
 		position: absolute;
 	}
 	.mainbtn {
-		margin-top: 70%;
+		margin-top: 50%;
 		position: absolute;
 		left: 30%;
+	}
+	.mobile {
+		height: 3500px !important;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.centre-logo {
+		padding-top: 0 !important;
+		position: absolute;
+		left: 30%;
+		margin-top: 30%;
+	}
+	.main-title {
+		padding-left: 18%;
+	}
+	.lead {
+		margin: 0;
+		padding-top: 0 !important;
+		margin-top: 0%;
+		margin-left: 0%;
+		/* width: 60vw; */
+		position: absolute;
+	}
+	.mainbtn {
+		margin-top: 50%;
+		position: absolute;
+		left: 25%;
 	}
 	.mobile {
 		height: 3500px !important;
@@ -175,6 +202,34 @@
 	}
 	.centre-logo {
 		margin-top: 36%;
+		width: 30vh;
+		left: 20%;
+	}
+	.mainbtn {
+		left: 15%;
+		margin-top: 100%;
+	}
+	.buttonJoin {
+		width: 70vw;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.main-title {
+		margin: 0;
+		padding: 0;
+		margin-top: 30%;
+		padding-left: 2%;
+
+		font-size: 40px;
+	}
+	.lead {
+		margin-left: 0%;
+		margin-top: 8%;
+		padding: 0 !important;
+		font-size: 10px;
+	}
+	.centre-logo {
+		margin-top: 40%;
 		width: 30vh;
 		left: 20%;
 	}

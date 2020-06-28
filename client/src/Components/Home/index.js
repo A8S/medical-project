@@ -80,7 +80,7 @@ class Home extends Component {
 
 												<div className="row mainbtn">
 													<div className="mainBtn">
-														<Link to="/Signup">
+														<Link to="/posts">
 															<button
 																type="button"
 																className="btn btn-default buttonJoin buttonJoinLight float-right"
@@ -91,7 +91,7 @@ class Home extends Component {
 													</div>
 
 													<div className="mainBtn">
-														<Link to="/Signup">
+														<Link to="/posts">
 															<button
 																type="button"
 																className="btn  buttonJoin buttonJoinDark float-left"
