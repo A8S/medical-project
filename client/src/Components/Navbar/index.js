@@ -94,7 +94,7 @@ class Navigation extends React.Component {
 					className="navbar fixed-top navbar-expand-lg navbar-dark "
 					style={{
 						backgroundColor:
-							this.state.status === 'top' ? 'rgba(0,0,0,0.3)' : '#343a40',
+							this.state.status === 'top' ? 'rgba(0,0,0,0.5)' : '#343a40',
 						color: this.state.status === 'top' ? 'white' : 'blue',
 						width: '100%',
 					}}
@@ -236,9 +236,11 @@ class Navigation extends React.Component {
 											Share Experience
 										</Link>
 
-										<Link className="dropdown-item" to="/users">
-											Users
-										</Link>
+										{isAuthenticated().user.role === 'admin' && (
+											<Link className="dropdown-item" to="/users">
+												Users
+											</Link>
+										)}
 
 										<Link
 											className="dropdown-item"

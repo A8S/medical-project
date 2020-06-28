@@ -2,20 +2,20 @@ ul {
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
-  }
-  
-  .carousel-container {
+}
+
+.carousel-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	min-height: 220px;
-  }
-  
-  .carousel {
+}
+
+.carousel {
 	position: relative;
-  }
-  
-  .carousel__slide {
+}
+
+.carousel__slide {
 	margin-right: auto;
 	margin-left: auto;
 	display: none;
@@ -23,55 +23,54 @@ ul {
 	height: auto;
 	list-style-type: none;
 	text-align: center;
-	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px 0px; 
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px 0px;
 	padding: 30px;
-  }
+}
 
-  .carousel__slides {
-	margin:auto;
+.carousel__slides {
+	margin: auto;
 	width: auto;
 	height: auto !important;
-	
-  }
-  @media (max-width: 991px) {
+}
+@media (max-width: 991px) {
 	.carousel__slide {
-	  padding-right: 60px;
-	  padding-left: 60px;
+		padding-right: 60px;
+		padding-left: 60px;
 	}
-  }
-  .carousel__slide--active {
+}
+.carousel__slide--active {
 	display: block;
-  }
-  
-  .carousel-slide__content {
+}
+
+.carousel-slide__content {
 	margin-bottom: 19px;
-	font-family: "Open Sans", "Trebuchet MS", sans-serif;
+	font-family: 'Open Sans', 'Trebuchet MS', sans-serif;
 	font-size: 16px;
-  }
-  @media (max-width: 991px) {
+}
+@media (max-width: 991px) {
 	.carousel-slide__content {
-	  font-size: 18px;
+		font-size: 18px;
 	}
-  }
-  
-  .carousel-slide__author,
-  .carousel-slide__source {
-	font-family: "Roboto", arial, sans-serif;
+}
+
+.carousel-slide__author,
+.carousel-slide__source {
+	font-family: 'Roboto', arial, sans-serif;
 	font-size: 14px;
-  }
-  @media (min-width: 992px) {
+}
+@media (min-width: 992px) {
 	.carousel-slide__author,
 	.carousel-slide__source {
-	  font-size: 16px;
+		font-size: 16px;
 	}
-  }
-  
-  .carousel-slide__source {
+}
+
+.carousel-slide__source {
 	font-style: italic;
 	color: #888;
-  }
-  
-  .carousel__arrow {
+}
+
+.carousel__arrow {
 	position: absolute;
 	top: 50%;
 	display: block;
@@ -79,33 +78,33 @@ ul {
 	cursor: pointer;
 	opacity: 0.75;
 	-webkit-transform: translateY(-50%);
-			transform: translateY(-50%);
+	transform: translateY(-50%);
 	transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
-  }
-  .carousel__arrow:focus {
+}
+.carousel__arrow:focus {
 	outline: 0;
-  }
-  .carousel__arrow:hover {
+}
+.carousel__arrow:hover {
 	opacity: 0.5;
-  }
-  .carousel__arrow--left {
+}
+.carousel__arrow--left {
 	left: 32px;
-  }
-  .carousel__arrow--right {
+}
+.carousel__arrow--right {
 	right: 32px;
-  }
-  
-  .carousel__indicators {
+}
+
+.carousel__indicators {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	margin-top: 20px;
-  }
-  .carousel__indicators li:nth-of-type(n + 2) {
+}
+.carousel__indicators li:nth-of-type(n + 2) {
 	margin-left: 9px;
-  }
-  
-  .carousel__indicator {
+}
+
+.carousel__indicator {
 	display: block;
 	width: 24px;
 	height: 3px;
@@ -113,23 +112,23 @@ ul {
 	cursor: pointer;
 	opacity: 0.15;
 	transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
-  }
-  .carousel__indicator:hover {
+}
+.carousel__indicator:hover {
 	opacity: 0.5;
-  }
-  .carousel__indicator--active, .carousel__indicator--active:hover {
+}
+.carousel__indicator--active,
+.carousel__indicator--active:hover {
 	opacity: 0.75;
-  }
-	
-	.contactDesc {
-		
-		display: flex;
-	}
+}
+
+.contactDesc {
+	display: flex;
+}
 
 ul.social-network {
 	list-style: none;
 	display: inline;
-	margin-left:0 !important;
+	margin-left: 0 !important;
 	padding: 0;
 }
 ul.social-network li {
@@ -138,50 +137,56 @@ ul.social-network li {
 }
 
 .social-network a.icoRss:hover {
-	background-color: #F56505;
+	background-color: #f56505;
 }
 .social-network a.icoFacebook:hover {
-	background-color:#3B5998;
+	background-color: #3b5998;
 }
 .social-network a.icoTwitter:hover {
-	background-color:#33ccff;
+	background-color: #33ccff;
 }
 .social-network a.icoGoogle:hover {
-	background-color:#BD3518;
+	background-color: #bd3518;
 }
 .social-network a.icoVimeo:hover {
-	background-color:#0590B8;
+	background-color: #0590b8;
 }
 .social-network a.icoLinkedin:hover {
-	background-color:#007bb7;
+	background-color: #007bb7;
 }
-.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
-.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
-	color:#fff;
+.social-network a.icoRss:hover i,
+.social-network a.icoFacebook:hover i,
+.social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i,
+.social-network a.icoVimeo:hover i,
+.social-network a.icoLinkedin:hover i {
+	color: #fff;
 }
-a.socialIcon:hover, .socialHoverClass {
-	color:#44BCDD;
+a.socialIcon:hover,
+.socialHoverClass {
+	color: #44bcdd;
 }
 
 .social-circle li a {
-	display:inline-block;
-	position:relative;
-	margin:0 auto 0 auto;
-	-moz-border-radius:50%;
-	-webkit-border-radius:50%;
-	border-radius:50%;
-	text-align:center;
+	display: inline-block;
+	position: relative;
+	margin: 0 auto 0 auto;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	text-align: center;
 	width: 50px;
 	height: 50px;
-	font-size:20px;
+	font-size: 20px;
 }
 .social-circle li i {
-	margin:0;
-	line-height:50px;
+	margin: 0;
+	line-height: 50px;
 	text-align: center;
 }
 
-.social-circle li a:hover i, .triggeredHover {
+.social-circle li a:hover i,
+.triggeredHover {
 	-webkit-transition: all 0.2s;
 	-moz-transition: all 0.2s;
 	-o-transition: all 0.2s;
@@ -197,21 +202,52 @@ a.socialIcon:hover, .socialHoverClass {
 	transition: all 0.8s;
 }
 
-.icoRss, .icoFacebook, .icoTwitter, .icoGoogle, .icoLinkedin{
- background-color: #D3D3D3;   
- margin: 5px;
+.icoRss,
+.icoFacebook,
+.icoTwitter,
+.icoGoogle,
+.icoLinkedin {
+	background-color: #d3d3d3;
+	margin: 5px;
 }
 
-.query{
+.query {
 	width: 45%;
 	margin-left: 28%;
 }
-.contactLine{
+.contactLine {
 	padding-top: 2%;
-    text-align: center;
+	text-align: center;
 }
-.reach{
+.reach {
 	text-align: center;
 	padding-top: 3%;
+}
 
+@media (max-width: 768px) {
+	.query {
+		margin-top: 20vh !important;
+		margin: auto;
+		padding: 0;
+		width: 90%;
+		margin-bottom: 10%;
+	}
+	.mobHide {
+		display: none;
+	}
+	.contactus-heading {
+		margin-bottom: 10px !important;
+		padding-top: 15px !important;
+		text-align: center;
+	}
+
+	.lead-contactus {
+		font-size: 16px !important;
+		padding: 0;
+		margin: 0;
+		margin-top: 10%;
+	}
+	.reach {
+		margin-bottom: 20% !important;
+	}
 }

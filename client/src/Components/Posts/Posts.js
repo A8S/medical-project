@@ -131,9 +131,7 @@ class Posts extends React.Component {
 										<Link to={`${posterId}`}>{posterName} </Link>
 									</td>
 									{/* <p className="card-text">{post.body.substring(0, 100)}</p> */}
-									<td  style={{ wordBreak: 'break-word' }}>
-										{post.tags[0]}
-									</td>
+									<td style={{ wordBreak: 'break-word' }}>{post.tags[0]}</td>
 									{/* only some charaters are visible in the posts */}
 
 									{/* <p className="font-italic mark">
@@ -141,9 +139,7 @@ class Posts extends React.Component {
 									on {new Date(post.created).toDateString()}
 								</p> */}
 									<td className="col-xs-8">{post.likes.length}</td>
-									<td style={{ wordBreak: 'break-word' }}>
-										{post.body}
-									</td>
+									<td style={{ wordBreak: 'break-word' }}>{post.body}</td>
 
 									<td>
 										<Link to={`/post/${post._id}`}>Read more</Link>
@@ -154,7 +150,19 @@ class Posts extends React.Component {
 					</tbody>
 				</Table>
 				<div className="center">
-					<Pagination>{items}</Pagination>
+					<Pagination>
+						{this.state.page > 1 ? (
+							<Pagination.Prev onClick={() => this.loadLess(1)} />
+						) : (
+							''
+						)}
+						{items}
+						{this.state.posts.length ? (
+							<Pagination.Next onClick={() => this.loadMore(1)} />
+						) : (
+							''
+						)}
+					</Pagination>
 				</div>
 			</div>
 		);
@@ -166,12 +174,6 @@ class Posts extends React.Component {
 			<div>
 				{' '}
 				{this.renderPosts(posts)}
-				<div className="left-right">
-					<Pagination>
-						{page > 1 ? <Pagination.Prev onClick={() => this.loadLess(1)} /> : ''}
-						{posts.length ? <Pagination.Next onClick={() => this.loadMore(1)} /> : ''}
-					</Pagination>
-				</div>
 				<h2 className="mt-5 mb-5">{!posts.length ? 'No more posts!' : ''}</h2>
 				{/* <h2 className="mt-5 mb-5">{!posts.length ? 'Loading...' : 'Recent Posts'}</h2> */}
 			</div>

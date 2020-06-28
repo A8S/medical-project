@@ -360,6 +360,20 @@ class SubdiseaseDetail extends React.Component {
 							<Tab eventKey="Posts" title="Posts">
 								<Posts tags={this.state.data.title} />
 							</Tab>
+							<Tab eventKey="Symptoms" title="Symptoms">
+								<Table striped bordered hover>
+									<thead>
+										<tr>
+											<th>URL</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Summary</td>
+										</tr>
+									</tbody>
+								</Table>
+							</Tab>
 							{/* <Tab eventKey="Symptoms" title="Symptoms">
 							<Pathy id={id} />
 						</Tab>
@@ -375,15 +389,15 @@ class SubdiseaseDetail extends React.Component {
 									</thead>
 									<tbody>
 										<tr>
-											<td>
-												{this.state.data.references.map(reference => {
-													return (
+											{this.state.data.references.map(reference => {
+												return (
+													<td>
 														<a target="_blank" href={reference.url}>
 															{reference.url}
 														</a>
-													);
-												})}
-											</td>
+													</td>
+												);
+											})}
 										</tr>
 									</tbody>
 								</Table>
@@ -397,11 +411,13 @@ class SubdiseaseDetail extends React.Component {
 									</thead>
 									<tbody>
 										<tr>
-											<td>
-												{this.state.data.books.map(book => {
-													return <span>{book.name}</span>;
-												})}
-											</td>
+											{this.state.data.books.map(book => {
+												return (
+													<td>
+														<span>{book.name}</span>
+													</td>
+												);
+											})}
 										</tr>
 									</tbody>
 								</Table>
@@ -411,33 +427,25 @@ class SubdiseaseDetail extends React.Component {
 									<thead>
 										<tr>
 											<th>URL</th>
+
+											<th>Summary</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>
+											{this.state.data.books.map(book => {
+												return (
+													<td>
+														<span>{book.name}</span>
+													</td>
+												);
+											})}
+
+											{/* <td>
 												{this.state.data.books.map(book => {
 													return <span>{book.name}</span>;
 												})}
-											</td>
-										</tr>
-									</tbody>
-								</Table>
-							</Tab>
-							<Tab eventKey="Symptoms" title="Symptoms">
-								<Table striped bordered hover>
-									<thead>
-										<tr>
-											<th>URL</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												{this.state.data.books.map(book => {
-													return <span>{book.name}</span>;
-												})}
-											</td>
+											</td> */}
 										</tr>
 									</tbody>
 								</Table>
@@ -453,7 +461,7 @@ class SubdiseaseDetail extends React.Component {
 					</Container>
 				</div>
 
-				{isAuthenticated() ? (
+				{isAuthenticated().user.role === 'admin' ? (
 					<div
 						style={{ textAlign: 'center', paddingBottom: '20px' }}
 						className="btn-group"

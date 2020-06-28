@@ -14,11 +14,12 @@
 }
 .buttonJoinLight {
 	margin: auto;
+	background-color: rgba(0, 0, 0, 0);
+	border: 3px solid #032122;
 }
 .buttonJoinDark {
-	background-color: #343a40;
+	background-color: #032122;
 	color: rgb(200, 200, 200);
-	font-weight: 800;
 	margin: auto;
 	margin-top: 80px;
 }
@@ -48,6 +49,7 @@
 	font-size: 3.5em;
 	margin-top: 3em;
 	padding-right: 25%;
+	color: #032122;
 }
 
 .lead {
@@ -55,6 +57,9 @@
 	font-weight: 400;
 	/* margin: 0 !important; */
 	margin-right: 25%;
+}
+.lead-home {
+	color: #032122;
 }
 .buttonJoin:hover {
 	display: block;
@@ -84,9 +89,9 @@
 }
 
 .centre-logo {
-	height: 70vh;
-	width: 40vw;
-	padding-top: 30vh;
+	height: 85vh;
+	width: 50vw;
+	padding-top: 15vh;
 }
 
 .form-inline {
@@ -139,6 +144,7 @@
 		padding-top: 0 !important;
 		position: absolute;
 		left: 30%;
+		width: 500px;
 		margin-top: 30%;
 	}
 	.main-title {

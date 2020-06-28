@@ -33,7 +33,7 @@
 	.lead-post {
 		font-size: 18px !important;
 		padding: 0;
-		padding-top: 80px;
+		padding-top: 20% !important;
 	}
 	.share-exp-btn {
 		width: 100px !important;

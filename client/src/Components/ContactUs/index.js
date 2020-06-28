@@ -6,28 +6,28 @@ class ContactUs extends Component {
 	state = {
 		name: '',
 		email: '',
-		query: ''
+		query: '',
 	};
 
-	onFormSubmit = (event) => {
+	onFormSubmit = event => {
 		event.preventDefault();
-		submitQuery(this.state).then((data) => {
+		submitQuery(this.state).then(data => {
 			if (data.status === 200) {
 				this.setState({
 					name: '',
 					email: '',
-					query: ''
+					query: '',
 				});
 			}
 		});
 	};
 
-	onChange = (event) => {
+	onChange = event => {
 		const key = event.target.name;
 		const value = event.target.value;
 
 		this.setState({
-			[key]: value
+			[key]: value,
 		});
 	};
 
@@ -76,16 +76,17 @@ class ContactUs extends Component {
 	render() {
 		return (
 			<div className="container">
-				<h2 className="my-5">Contact Us</h2>
-				<p className="lead">
-					Tell us about your company, your data, and your analytic goals. We can help you use your data to
-					make better decisions. And if you don't currently have the data you need, we can help design
-					data-capture and data-management strategies today that will power your analytics tomorrow.
+				<h2 className="my-5 contactus-heading">Contact Us</h2>
+				<p className="lead lead-contactus">
+					Tell us about your company, your data, and your analytic goals. We can help you
+					use your data to make better decisions. And if you don't currently have the data
+					you need, we can help design data-capture and data-management strategies today
+					that will power your analytics tomorrow.
 				</p>
 				<h4 className="contactLine">Fill the Form to Contact us:</h4>
 				<div className="card query bg-light">{this.queryForm()}</div>
 				<div className="reach">
-					<h6 className="lead">Follow us on:</h6>
+					<h6 className="lead mobHide">Follow us on:</h6>
 
 					<div className="contactDesc">
 						<div className="col-md-12 col-sm-12">

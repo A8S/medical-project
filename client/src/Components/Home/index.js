@@ -4,7 +4,7 @@ import './style.css';
 import CardLayout from '../WhatWeDo';
 import logo from '../../Images/logo.svg';
 import Background from '../../Images/Home/bg.svg';
-import MainSvg from '../../Images/Home/main.svg';
+import MainSvg from '../../Images/Home/main2.svg';
 
 import Testimonial from '../ContactUs/Testimonial';
 import Testimonialdata from '../../Data/Testimonial_data';
@@ -38,7 +38,7 @@ class Home extends Component {
 	render() {
 		return (
 			<div style={isAuthenticated() ? { minHeight: '910px' } : { minHeight: '2650px' }}>
-				<div className="mobile">
+				<div className={isAuthenticated() ? 'dummyclass' : 'mobile'}>
 					<div
 						style={{
 							backgroundImage: `url(${Background})`,
@@ -73,14 +73,14 @@ class Home extends Component {
 												</div>
 
 												<div>
-													<p className="lead">
+													<p className="lead lead-home">
 														Experience of common man help each other
 													</p>
 												</div>
 
 												<div className="row mainbtn">
 													<div className="mainBtn">
-														<Link to="/posts">
+														<Link to="/share_experience">
 															<button
 																type="button"
 																className="btn btn-default buttonJoin buttonJoinLight float-right"
@@ -91,7 +91,7 @@ class Home extends Component {
 													</div>
 
 													<div className="mainBtn">
-														<Link to="/posts">
+														<Link to="/share_experience">
 															<button
 																type="button"
 																className="btn  buttonJoin buttonJoinDark float-left"
