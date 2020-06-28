@@ -37,7 +37,7 @@ class Home extends Component {
 
 	render() {
 		return (
-			<div style={isAuthenticated() ? { minHeight: '910px' } : { minHeight: '2650px' }}>
+			<div style={isAuthenticated() ? { minHeight: '88vh' } : { minHeight: '2650px' }}>
 				<div className={isAuthenticated() ? 'dummyclass' : 'mobile'}>
 					<div
 						style={{
