@@ -406,6 +406,43 @@ class SubdiseaseDetail extends React.Component {
 									</tbody>
 								</Table>
 							</Tab>
+							<Tab eventKey="Links" title="Links">
+								<Table striped bordered hover>
+									<thead>
+										<tr>
+											<th>URL</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												{this.state.data.books.map(book => {
+													return <span>{book.name}</span>;
+												})}
+											</td>
+										</tr>
+									</tbody>
+								</Table>
+							</Tab>
+							<Tab eventKey="Symptoms" title="Symptoms">
+								<Table striped bordered hover>
+									<thead>
+										<tr>
+											<th>URL</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												{this.state.data.books.map(book => {
+													return <span>{book.name}</span>;
+												})}
+											</td>
+										</tr>
+									</tbody>
+								</Table>
+							</Tab>
+
 							{/* <Tab eventKey="Blogs" title="Blogs">
 							<Pathy id={id} />
 						</Tab>
