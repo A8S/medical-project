@@ -228,7 +228,7 @@ class Navigation extends React.Component {
 										</Link>
 										<Link
 											className="dropdown-item"
-											to={`/user/${isAuthenticated().user._id}`}
+											to="/bookmarks"
 										>
 											Bookmarks
 										</Link>
