@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom'; // withRouter is higher order componenet which means it takes anaother component as argument
 import logo from '../../Images/logo.svg';
 import { signout, isAuthenticated } from '../../Api';
+import './style.css';
 
 const isActive = (history, path) => {
 	if (history.location.pathname === path) return { color: 'white' };
@@ -94,7 +95,7 @@ class Navigation extends React.Component {
 					className="navbar fixed-top navbar-expand-lg navbar-dark "
 					style={{
 						backgroundColor:
-							this.state.status === 'top' ? 'rgba(0,0,0,0.5)' : '#343a40',
+							this.state.status === 'top' ? 'rgba(0,0,0,0.3)' : '#343a40',
 						color: this.state.status === 'top' ? 'white' : 'blue',
 						width: '100%',
 					}}
@@ -183,7 +184,7 @@ class Navigation extends React.Component {
 										>
 											<button
 												type="button"
-												className="btn btn-default float-right"
+												className="btn btn-default float-right signin"
 											>
 												Sign In
 											</button>
@@ -197,7 +198,7 @@ class Navigation extends React.Component {
 										>
 											<button
 												type="button"
-												className="btn btn-primary float-right"
+												className="btn btn-primary float-right signup"
 											>
 												Sign Up
 											</button>
@@ -228,7 +229,7 @@ class Navigation extends React.Component {
 										</Link>
 										<Link
 											className="dropdown-item"
-											to="/bookmarks"
+											to={`/user/${isAuthenticated().user._id}`}
 										>
 											Bookmarks
 										</Link>
@@ -236,11 +237,9 @@ class Navigation extends React.Component {
 											Share Experience
 										</Link>
 
-										{isAuthenticated().user.role === 'admin' && (
-											<Link className="dropdown-item" to="/users">
-												Users
-											</Link>
-										)}
+										<Link className="dropdown-item" to="/users">
+											Users
+										</Link>
 
 										<Link
 											className="dropdown-item"

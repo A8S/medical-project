@@ -28,6 +28,26 @@
 	padding: 0px 10px;
 }
 
+.signup {
+	background-color: rgba(0, 0, 0, 0) !important;
+	color: #b7bcb9;
+	border: 3px solid #b7bcb9;
+	border-radius: 50px;
+}
+.signupAfter {
+	background-color: white;
+	border: 3px solid white;
+}
+.signin {
+	background-color: rgba(0, 0, 0, 0);
+	color: #b7bcb9;
+	border-radius: 50px;
+}
+
+.signinAftter {
+	color: white;
+}
+
 @media screen and (max-height: 450px) {
 	.sidenav {
 		padding-top: 15px;

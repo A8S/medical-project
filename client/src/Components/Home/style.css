@@ -15,6 +15,7 @@
 .buttonJoinLight {
 	margin: auto;
 	background-color: rgba(0, 0, 0, 0);
+	color: #032122;
 	border: 3px solid #032122;
 }
 .buttonJoinDark {
@@ -144,8 +145,8 @@
 		padding-top: 0 !important;
 		position: absolute;
 		left: 30%;
-		width: 500px;
-		margin-top: 30%;
+		width: 300px;
+		margin-top: 25%;
 	}
 	.main-title {
 		padding-left: 20%;
@@ -185,7 +186,7 @@
 		position: absolute;
 	}
 	.mainbtn {
-		margin-top: 50%;
+		margin-top: 70%;
 		position: absolute;
 		left: 25%;
 	}
