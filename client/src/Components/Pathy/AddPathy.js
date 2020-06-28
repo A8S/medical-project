@@ -16,7 +16,7 @@ class AddPathy extends React.Component {
 
 	handleChange = name => event => {
 		this.setState({
-			[name]: event.target.value,
+			[name.trim()]: event.target.value,
 		});
 	};
 
