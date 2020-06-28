@@ -1,17 +1,20 @@
 import { serverUrl } from '../variables';
 import axios from 'axios';
 
-export const createPathy = (title, description, effective) => {
-	return fetch(`${serverUrl}/api/pathy`, {
-		method: 'POST',
-
-		data: JSON.stringify({ title: title, description: description, effective: effective }),
+export const createPathy = (title, effective, description) => {
+	axios({
+		method: 'post',
+		url: 'https://infinite-harbor-95705.herokuapp.com/api/pathy',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		data: JSON.stringify({ title: title, effective: effective, description: description }),
 	})
 		.then(function(response) {
-			return response;
+			console.log(JSON.stringify(response.data));
 		})
 		.catch(function(error) {
-			return error;
+			console.log(error);
 		});
 };
 
