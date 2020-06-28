@@ -15,6 +15,21 @@ export const createPathy = (title, description, effective) => {
 		});
 };
 
+// export const createPathy = async pathy => {
+// 	// console.log(feedback);
+// 	return axios({
+// 		method: 'POST',
+// 		url: `${serverUrl}/api/pathy/`,
+// 		data: pathy,
+// 	})
+// 		.then(function(response) {
+// 			return response;
+// 		})
+// 		.catch(function(error) {
+// 			return error;
+// 		});
+// };
+
 // Read
 export const getPathy = () => {
 	return fetch(`${serverUrl}/api/pathys`, {

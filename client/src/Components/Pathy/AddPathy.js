@@ -20,7 +20,15 @@ class AddPathy extends React.Component {
 		});
 	};
 
-	handleSubmit = event => {
+	handleSubmit = async event => {
+		const { title, description, effective } = this.state;
+		var object = {
+			title,
+			description,
+			effective,
+		};
+
+		const res = await createPathy(object);
 		console.log('ddnjsanjsnfjnfjansdsan');
 		event.preventDefault();
 		createPathy(this.state.title, this.state.description, this.state.effective);
@@ -43,7 +51,7 @@ class AddPathy extends React.Component {
 								<input
 									type="text"
 									className="form-control"
-									name="name"
+									name="title"
 									value={this.state.title}
 									onChange={this.handleChange('title')}
 								/>
@@ -52,7 +60,7 @@ class AddPathy extends React.Component {
 								<label>Most effective for</label>
 								<select
 									className="form-control"
-									name="mef"
+									name="effective"
 									value={this.state.effective}
 									onChange={this.handleChange('effective')}
 								>
@@ -73,7 +81,7 @@ class AddPathy extends React.Component {
 									onChange={this.handleChange('description')}
 								/>
 							</div>
-							<button onClick={this.handleSubmit} className="btn btn-primary">
+							<button type="submit" className="btn btn-primary">
 								Submit
 							</button>
 						</form>
