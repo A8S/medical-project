@@ -3,14 +3,13 @@ import './style.css';
 import Testimonial from '../ContactUs/Testimonial';
 import Testimonialdata from '../../Data/Testimonial_data';
 
-
 class AboutUs extends React.Component {
 	render() {
 		return (
 			<div className="container">
 				<h2 className="my-5 aboutTitle">About Us</h2>
 				<div className="row">
-					<div className="col-6">
+					<div className=" col-sm-12 col-md-6  ">
 						<div className="wrap">
 							<span>
 								<i className="fa fa-unlock-alt fa-5x mx-4" aria-hidden="true" />
@@ -24,7 +23,7 @@ class AboutUs extends React.Component {
 							</div>
 						</div>
 					</div>
-					<div className="col-6">
+					<div className=" col-sm-12 col-md-6  ">
 						<div className="wrap">
 							<span>
 								<i className="fa fa-comments-o fa-5x mx-4" aria-hidden="true" />
@@ -38,7 +37,7 @@ class AboutUs extends React.Component {
 							</div>
 						</div>
 					</div>
-					<div className="col-6">
+					<div className=" col-sm-12 col-md-6  ">
 						<div className="wrap">
 							<span>
 								<i className="fa fa-certificate fa-5x mx-4" aria-hidden="true" />
@@ -52,7 +51,7 @@ class AboutUs extends React.Component {
 							</div>
 						</div>
 					</div>
-					<div className="col-6">
+					<div className="col-sm-12 col-md-6 ">
 						<div className="wrap">
 							<span>
 								<i className="fa fa-bullseye fa-5x mx-4" aria-hidden="true" />
@@ -145,8 +144,9 @@ class AboutUs extends React.Component {
 					<div className="col-md-3">
 						<div className="card shadow p-3 mb-5 bg-white rounded">
 							<div className="card-body">
-								<h5 className="card-title text-center font-weight-bold"><span >
-									</span> </h5>
+								<h5 className="card-title text-center font-weight-bold">
+									<span />{' '}
+								</h5>
 								<p className="card-text text-center">No. of Visitors</p>
 							</div>
 						</div>
@@ -167,7 +167,7 @@ class AboutUs extends React.Component {
 							</div>
 						</div>
 					</div>
-					</div>
+				</div>
 			</div>
 		);
 	}

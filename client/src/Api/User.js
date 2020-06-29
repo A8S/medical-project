@@ -121,3 +121,8 @@ export const findPeople = (userId, token) => {
 		})
 		.catch(err => console.log(err));
 };
+
+export const countuser = async () => {
+	const counting = await axios.get(`${serverUrl}/api/user/count`);
+	return counting.data;
+};

@@ -11,12 +11,14 @@ import Testimonialdata from '../../Data/Testimonial_data';
 import { subscribe } from '../../Api/Subscribe';
 import { isAuthenticated } from '../../Api/';
 import { Container, Row, Col } from 'react-bootstrap';
-import home from '../../Images/Home3.jpg';
-import Footer from '../Footer';
+import { countpost } from '../../Api/Post';
+import { countuser } from '../../Api/User';
 
 class Home extends Component {
 	state = {
 		email: '',
+		postCount: 0,
+		userCount: 0,
 	};
 	onSubscribe = e => {
 		e.preventDefault();
@@ -34,6 +36,18 @@ class Home extends Component {
 			email: e.target.value,
 		});
 	};
+	componentDidMount() {
+		countpost().then(data => {
+			this.setState({
+				postCount: data.count,
+			});
+		});
+		countuser().then(data => {
+			this.setState({
+				userCount: data.count,
+			});
+		});
+	}
 
 	render() {
 		return (
@@ -122,7 +136,7 @@ class Home extends Component {
 										<div className="card shadow p-3 mb-5 bg-white rounded">
 											<div className="card-body">
 												<h5 className="card-title text-center font-weight-bold">
-													700
+													{this.state.userCount}
 												</h5>
 												<p className="card-text text-center">
 													No. of Members
@@ -134,7 +148,7 @@ class Home extends Component {
 										<div className="card shadow p-3 mb-5 bg-white rounded">
 											<div className="card-body">
 												<h5 className="card-title text-center font-weight-bold">
-													4020
+													{this.state.postCount}
 												</h5>
 												<p className="card-text text-center">
 													No. of Visitors
@@ -146,7 +160,7 @@ class Home extends Component {
 										<div className="card shadow p-3 mb-5 bg-white rounded">
 											<div className="card-body">
 												<h5 className="card-title text-center font-weight-bold">
-													120
+													100+
 												</h5>
 												<p className="card-text text-center">
 													No. of Disease

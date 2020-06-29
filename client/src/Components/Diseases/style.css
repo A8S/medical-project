@@ -19,7 +19,7 @@
 .card-disease {
 	border-radius: 16px !important;
 	border: 8px solid rgba(0, 0, 0, 0.125);
-		width: auto;
+	width: auto;
 }
 
 .search {
@@ -31,12 +31,12 @@
 .autosuggestionSearchField {
 	width: 80vw !important;
 }
-.card-text{
+.card-text {
 	overflow: hidden;
-    width: 90%;
-    display: inline-block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+	width: 90%;
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .readMoreButton {
@@ -55,19 +55,19 @@
 	padding: 0.5rem;
 	width: 100%;
 }
-.card-text{
+.card-text {
 	overflow: hidden;
-    width: 90%;
-    display: inline-block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+	width: 90%;
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
-.card-text{
+.card-text {
 	overflow: hidden;
-    width: 90%;
-    display: inline-block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+	width: 90%;
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .no-suggestions {
@@ -179,12 +179,37 @@
 }
 @media (max-width: 768px) {
 	.makeitflex {
-		width: 47%;
+		width: 48%;
 	}
+	.card-container {
+		width: 100% !important;
+	}
+	.disease-container {
+		padding: 0px 0px !important;
+		margin: auto;
+	}
+	/* .dropdown {
+		position: absolute;
+		top: -20%;
+	} */
 }
 @media (max-width: 500px) {
 	.makeitflex {
 		width: 90%;
+	}
+	.search {
+		padding-top: 20px;
+		margin: auto;
+	}
+	.provide-card-row {
+		margin-top: 5%;
+		padding-left: 30px;
+	}
+	.main-div {
+		padding-top: 5%;
+	}
+	.dropdown {
+		margin: auto;
 	}
 }
 

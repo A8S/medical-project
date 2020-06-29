@@ -146,20 +146,22 @@
 		position: absolute;
 		left: 30%;
 		width: 300px;
-		margin-top: 25%;
+		margin-top: 15%;
 	}
 	.main-title {
 		padding-left: 20%;
+		margin-top: 10%;
+		font-size: 55px;
 	}
 	.lead {
 		margin: 0;
-		margin-top: 0%;
+		margin-top: -5%;
 		margin-left: 0%;
 		/* width: 60vw; */
 		position: absolute;
 	}
 	.mainbtn {
-		margin-top: 50%;
+		margin-top: 45vh;
 		position: absolute;
 		left: 30%;
 	}
@@ -198,7 +200,7 @@
 	.main-title {
 		margin: 0;
 		padding: 0;
-		margin-top: 30%;
+		margin-top: 14%;
 		padding-left: 5%;
 
 		font-size: 40px;
@@ -208,13 +210,13 @@
 		margin-top: 0%;
 	}
 	.centre-logo {
-		margin-top: 36%;
-		width: 30vh;
+		margin-top: 15%;
+		width: 40vh;
 		left: 20%;
 	}
 	.mainbtn {
 		left: 15%;
-		margin-top: 100%;
+		margin-top: 50vh;
 	}
 	.buttonJoin {
 		width: 70vw;
@@ -224,7 +226,7 @@
 	.main-title {
 		margin: 0;
 		padding: 0;
-		margin-top: 30%;
+		margin-top: 20%;
 		padding-left: 2%;
 
 		font-size: 40px;
@@ -236,13 +238,13 @@
 		font-size: 10px;
 	}
 	.centre-logo {
-		margin-top: 40%;
+		margin-top: 30%;
 		width: 30vh;
 		left: 20%;
 	}
 	.mainbtn {
 		left: 15%;
-		margin-top: 100%;
+		margin-top: 50vh;
 	}
 	.buttonJoin {
 		width: 70vw;

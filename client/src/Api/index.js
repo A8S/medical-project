@@ -1,4 +1,4 @@
-import {serverUrl} from '../variables';
+import { serverUrl } from '../variables';
 
 export const signup = user => {
 	return fetch(`${serverUrl}/api/signup`, {
