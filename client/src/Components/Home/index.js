@@ -151,7 +151,7 @@ class Home extends Component {
 													{this.state.postCount}
 												</h5>
 												<p className="card-text text-center">
-													No. of Visitors
+													No. of Posts
 												</p>
 											</div>
 										</div>

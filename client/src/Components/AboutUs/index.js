@@ -2,8 +2,26 @@ import React from 'react';
 import './style.css';
 import Testimonial from '../ContactUs/Testimonial';
 import Testimonialdata from '../../Data/Testimonial_data';
+import { countpost } from '../../Api/Post';
+import { countuser } from '../../Api/User';
 
 class AboutUs extends React.Component {
+	state = {
+		postCount: 0,
+		userCount: 0,
+	};
+	componentDidMount() {
+		countpost().then(data => {
+			this.setState({
+				postCount: data.count,
+			});
+		});
+		countuser().then(data => {
+			this.setState({
+				userCount: data.count,
+			});
+		});
+	}
 	render() {
 		return (
 			<div className="container">
@@ -136,7 +154,9 @@ class AboutUs extends React.Component {
 					<div className="col-md-3">
 						<div className="card shadow p-3 mb-5 bg-white rounded">
 							<div className="card-body">
-								<h5 className="card-title text-center font-weight-bold">700</h5>
+								<h5 className="card-title text-center font-weight-bold">
+									{this.state.userCount}
+								</h5>
 								<p className="card-text text-center"> Members</p>
 							</div>
 						</div>
@@ -145,9 +165,9 @@ class AboutUs extends React.Component {
 						<div className="card shadow p-3 mb-5 bg-white rounded">
 							<div className="card-body">
 								<h5 className="card-title text-center font-weight-bold">
-									<span />{' '}
+									<span>{this.state.postCount}</span>
 								</h5>
-								<p className="card-text text-center">No. of Visitors</p>
+								<p className="card-text text-center">No. of Posts</p>
 							</div>
 						</div>
 					</div>
