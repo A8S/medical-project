@@ -208,7 +208,7 @@ class SinglePost extends Component {
 							onError={i => (i.target.src = `${DefaultPost}`)}
 							className="img-thunbnail mb-3"
 							style={{
-								height: '300px',
+								
 								width: '100%',
 								objectFit: 'cover',
 							}}
