@@ -84,8 +84,9 @@ class Posts extends React.Component {
 										<Link to={`${posterId}`}>{posterName} </Link>
 									</td>
 									{/* <p className="card-text">{post.body.substring(0, 100)}</p> */}
-									<td className="card-text" style={{ wordBreak: 'break-word' }}>
-										Cancer
+									
+									<td  style={{ wordBreak: 'break-word' }}>
+										{post.tags[0]}
 									</td>
 									{/* only some charaters are visible in the posts */}
 
@@ -93,7 +94,7 @@ class Posts extends React.Component {
 									Posted by <Link to={`${posterId}`}>{posterName} </Link>
 									on {new Date(post.created).toDateString()}
 								</p> */}
-									<td className="col-xs-8">{14}</td>
+									<td className="col-xs-8">{post.likes.length}</td>
 									<td className="card-text" style={{ wordBreak: 'break-word' }}>
 										{post.body}
 									</td>
