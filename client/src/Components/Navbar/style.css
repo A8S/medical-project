@@ -56,3 +56,9 @@
 		font-size: 18px;
 	}
 }
+#dropdown-basic
+{
+	position: relative !important;
+	right:0% !important;
+	bottom: 40% !important;
+}
