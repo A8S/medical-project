@@ -4,6 +4,8 @@ import { Link, withRouter } from 'react-router-dom'; // withRouter is higher ord
 import logo from '../../Images/logo.svg';
 import { signout, isAuthenticated } from '../../Api';
 import './style.css';
+import { Dropdown } from 'react-bootstrap';
+
 
 const isActive = (history, path) => {
 	if (history.location.pathname === path) return { color: 'white' };
@@ -121,15 +123,17 @@ class Navigation extends React.Component {
 								<Link
 									className="nav-link"
 									style={isActive(history, '/aboutus')}
+									style={{marginTop:4}}
 									to="/aboutus"
 								>
 									About Us
 								</Link>
 							</li>
-							<li className="nav-item">
+							<li className="nav-item" >
 								<Link
 									className="nav-link"
 									style={isActive(history, '/diseases')}
+									style={{marginTop:4}}
 									to="/diseases"
 								>
 									Diseases
@@ -139,6 +143,7 @@ class Navigation extends React.Component {
 								<Link
 									className="nav-link"
 									style={isActive(history, '/pathy')}
+									style={{marginTop:4}}
 									to="/pathy"
 								>
 									Pathy
@@ -148,6 +153,7 @@ class Navigation extends React.Component {
 								<Link
 									className="nav-link"
 									style={isActive(history, '/posts')}
+									style={{marginTop:4}}
 									to="/posts"
 								>
 									Posts
@@ -157,6 +163,7 @@ class Navigation extends React.Component {
 								<Link
 									className="nav-link"
 									style={isActive(history, '/contactus')}
+									style={{marginTop:4}}
 									to="/contactus"
 								>
 									Contact us
@@ -166,11 +173,37 @@ class Navigation extends React.Component {
 								<Link
 									className="nav-link"
 									style={isActive(history, '/feedback')}
+									style={{marginTop:4}}
 									to="/feedback"
 								>
 									Feedback
 								</Link>
 							</li>
+							{/* <li className="nav-item">
+							<Dropdown >
+                           <p className="nav-link" style={{fontSize:17}}>
+                          	Diseases
+                          <Dropdown.Toggle  id="dropdown-basic" style ={{color:"white",backgroundColor:"transparent"}}/>
+			
+                          <Dropdown.Menu style={{ width: '200px',backgroundColor:"lightgrey",fontWeight:"bold",fontSize : 20}}>
+                           <Dropdown.Item href="#/action-1">Breast</Dropdown.Item>
+                             <Dropdown.Item href="#">Lungs</Dropdown.Item>
+                               <Dropdown.Item href="#/action-3">Skin</Dropdown.Item>
+							   <Dropdown.Item href="#/action-3">Brain</Dropdown.Item>
+							   <Dropdown.Item href="#/action-3">Blood</Dropdown.Item>
+							   <Dropdown.Item href="#/action-3">Breast Cancer</Dropdown.Item>
+							   <Dropdown.Item href="#/action-3">Acidity</Dropdown.Item>
+							   <Dropdown.Item href="#/action-3">HeartAttack</Dropdown.Item>
+							   <Dropdown.Divider />
+							   <Dropdown.Item href="#/action-3">Categories</Dropdown.Item>
+                                      </Dropdown.Menu>
+									  </p>
+                                       </Dropdown>
+									 
+
+                                    
+                                        </li> */}
+
 						</ul>
 
 						<ul className="nav navbar-nav navbar-right ml-md-auto ">
@@ -179,12 +212,12 @@ class Navigation extends React.Component {
 									<li className="nav-item">
 										<Link
 											className="nav-link"
-											style={isActive(history, '/signin')}
-											to="/signin"
+											style={isActive(history, '/signup')}
+											to="/signup"
 										>
 											<button
 												type="button"
-												className="btn btn-default float-right signin"
+												className="btn btn-primary float-right signup"
 											>
 												Sign In
 											</button>
