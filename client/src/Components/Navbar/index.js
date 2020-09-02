@@ -223,12 +223,12 @@ class Navigation extends React.Component {
 									<li className="nav-item">
 										<Link
 											className="nav-link"
-											style={isActive(history, '/signup')}
-											to="/signup"
+											style={isActive(history, '/signin')}
+											to="/signin"
 										>
 											<button
 												type="button"
-												className="btn btn-primary float-right signup"
+												className="btn btn-primary float-right signin"
 											>
 												Sign In
 											</button>
