@@ -112,7 +112,8 @@ class Diseases extends React.Component {
 		return (
 			<div className="container-fluid disease-container" style={{ minHeight: '60vh' }}>
 				<div className="row" style={{ paddingTop: '40px' }}>
-					<div className="col-md-8 col-sm-12">
+				<div className="col-md-8 col-sm-12">
+					{/* <div className="col-md-8 col-sm-12">
 						<Dropdown>
 							<Dropdown.Toggle className="dropdown">Categories</Dropdown.Toggle>
 							<Dropdown.Menu style={{ width: '400px' }}>
@@ -128,6 +129,8 @@ class Diseases extends React.Component {
 								})}
 							</Dropdown.Menu>
 						</Dropdown>
+					</div> */}
+
 					</div>
 
 					{this.state.admin ? (
