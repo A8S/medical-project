@@ -4,7 +4,7 @@ import './style.css';
 import CardLayout from '../WhatWeDo';
 import logo from '../../Images/logo.svg';
 import Background from '../../Images/Home/bg.svg';
-import MainSvg from '../../Images/Home/main2.svg';
+import MainSvg from '../../Images/Home/BG_new.svg';
 
 import Testimonial from '../ContactUs/Testimonial';
 import Testimonialdata from '../../Data/Testimonial_data';
@@ -55,8 +55,8 @@ class Home extends Component {
 				<div className={isAuthenticated() ? 'dummyclass' : 'mobile'}>
 					<div
 						style={{
-							backgroundImage: `url(${Background})`,
-
+							//backgroundImage: `url(${Background})`,
+							backgroundColor: '#f4f4f4',
 							// flex: '1',
 							// alignSelf: 'stretch',
 							position: 'absolute',
