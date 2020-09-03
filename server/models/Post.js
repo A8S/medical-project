@@ -11,6 +11,7 @@ const postSchema = new mongoose.Schema({
     required: true,
   },
   tags: [String],
+  
   treatmentTaken: {
     type: String,
     required: true,
