@@ -15,8 +15,8 @@
 .buttonJoinLight {
 	margin: auto;
 	background-color: rgba(0, 0, 0, 0);
-	color: #032122;
-	border: 3px solid #032122;
+	color: #2f2f2f;
+	border: 2px solid #2f2f2f;
 }
 .buttonJoinDark {
 	background-color: #007AFF;

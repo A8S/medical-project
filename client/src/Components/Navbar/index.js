@@ -97,7 +97,7 @@ class Navigation extends React.Component {
 					className="navbar fixed-top navbar-expand-lg navbar-dark "
 					style={{
 						backgroundColor:
-							this.state.status === 'top' ? 'rgba(0,0,0,0.3)' : '#343a40',
+							this.state.status === 'top' ? 'rgba(0,0,0,0.3)' : '#007aff',
 						color: this.state.status === 'top' ? 'white' : 'blue',
 						width: '100%',
 					}}

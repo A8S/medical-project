@@ -110,7 +110,7 @@ class Home extends Component {
 																type="button"
 																className="btn  buttonJoin buttonJoinDark float-left"
 															>
-																Ask Suggestion
+																Find Suggestion
 															</button>
 														</Link>
 													</div>
