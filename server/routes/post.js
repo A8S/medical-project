@@ -14,6 +14,7 @@ const {
   unlike,
   tags,
   postCount,
+  pathypost
 } = require('../controllers/post');
 const { requireSignin } = require('../controllers/auth');
 const { userById } = require('../controllers/user');
@@ -35,6 +36,7 @@ router.put('/post/like', like);
 router.put('/post/unlike', unlike);
 //tags
 router.post('/post/tags', tags);
+router.post('/post/pathyposts',pathypost);
 
 router.get('/post/count', postCount);
 router.post(

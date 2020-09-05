@@ -331,3 +331,24 @@ exports.tags = async (req, res) => {
     })
     .catch((err) => console.log(err));
 };
+
+exports.pathypost = async (req, res) => {
+  console.log('this is ', req.body.treatmentTaken);
+  const posts = await Post.find()
+    .then((count) => {
+      return Post.find(({ treatmentTaken: { $all: req.body.treatmentTaken } } )&&({tags:{$all: req.body.tags}}))
+        .populate('comments', 'text created')
+        .populate('comments.postedBy', '_id name')
+        .populate('postedBy', '_id name')
+        .sort({ date: -1 })
+
+        .select('_id title body likes created tags treatmentTaken');
+    })
+    .then((posts) => {
+      //  const filtered = posts.filter(post => post.tags)
+      console.log('cc', posts);
+      res.status(200).json(posts);
+    })
+    .catch((err) => console.log(err));
+};
+
