@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './style.css';
 import CardLayout from '../WhatWeDo';
 import logo from '../../Images/logo.svg';
-import Background from '../../Images/Home/bg.svg';
+//import Background from '../../Images/Home/bg.svg';
 import MainSvg from '../../Images/Home/BG_new.svg';
 
 import Testimonial from '../ContactUs/Testimonial';
@@ -110,7 +110,7 @@ class Home extends Component {
 																type="button"
 																className="btn  buttonJoin buttonJoinDark float-left"
 															>
-																Find Suggestion
+																Ask Suggestion
 															</button>
 														</Link>
 													</div>

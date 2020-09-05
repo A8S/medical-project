@@ -94,11 +94,11 @@ class Navigation extends React.Component {
 		return (
 			<div>
 				<nav
-					className="navbar fixed-top navbar-expand-lg navbar-dark "
+					className="navbar fixed-top navbar-expand-lg navbar-dark"
 					style={{
 						backgroundColor:
-							this.state.status === 'top' ? 'rgba(0,0,0,0.3)' : '#007aff',
-						color: this.state.status === 'top' ? 'white' : 'blue',
+							this.state.status === 'top' ? '#007aff' : '#007aff',
+						color: this.state === 'top' ? 'white' : 'blue',
 						width: '100%',
 					}}
 				>
@@ -121,7 +121,7 @@ class Navigation extends React.Component {
 						<ul className="nav navbar-nav navbar-nav mr-auto">
 						<li className="nav-item" >
 								<Link
-									className="nav-link"
+									className="nav-link hover"
 									style={isActive(history, '/')}
 									style={{marginTop:4}}
 									to="/"
